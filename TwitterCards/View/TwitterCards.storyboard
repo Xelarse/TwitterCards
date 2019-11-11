@@ -17,7 +17,45 @@
                     <view key="view" contentMode="scaleToFill" id="8aG-ZN-0ID">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ai4-3H-bXA" userLabel="UpperThird">
+                                <rect key="frame" x="0.0" y="44" width="414" height="272"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHu-g1-Cem">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <color key="tintColor" red="0.11405044049024582" green="0.63152408599853516" blue="0.95026165246963501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <textAttributes key="titleTextAttributes">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                        </textAttributes>
+                                        <items>
+                                            <navigationItem title="TweetCards" largeTitleDisplayMode="always" id="o9i-WZ-PSO"/>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cHu-g1-Cem" firstAttribute="leading" secondItem="ai4-3H-bXA" secondAttribute="leading" id="EGO-wa-QnW"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHu-g1-Cem" secondAttribute="trailing" id="UqU-Me-qQk"/>
+                                    <constraint firstItem="cHu-g1-Cem" firstAttribute="centerX" secondItem="ai4-3H-bXA" secondAttribute="centerX" id="frl-YI-F0d"/>
+                                    <constraint firstItem="cHu-g1-Cem" firstAttribute="top" secondItem="ai4-3H-bXA" secondAttribute="top" id="ppG-eU-ZvU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-wS-gaQ" userLabel="LowerTwoThirds">
+                                <rect key="frame" x="0.0" y="316" width="414" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ai4-3H-bXA" firstAttribute="leading" secondItem="oHe-oq-LNe" secondAttribute="leading" id="62k-xX-M58"/>
+                            <constraint firstItem="oHe-oq-LNe" firstAttribute="trailing" secondItem="8aP-wS-gaQ" secondAttribute="trailing" id="Eie-nM-Pnv"/>
+                            <constraint firstItem="8aP-wS-gaQ" firstAttribute="height" secondItem="oHe-oq-LNe" secondAttribute="height" multiplier="0.6666" id="Ksa-f0-4Mt"/>
+                            <constraint firstItem="oHe-oq-LNe" firstAttribute="bottom" secondItem="8aP-wS-gaQ" secondAttribute="bottom" id="O6W-qd-gYL"/>
+                            <constraint firstItem="ai4-3H-bXA" firstAttribute="height" secondItem="oHe-oq-LNe" secondAttribute="height" multiplier="0.3333" id="Sgo-3Q-MLc"/>
+                            <constraint firstItem="oHe-oq-LNe" firstAttribute="trailing" secondItem="ai4-3H-bXA" secondAttribute="trailing" id="VEv-LQ-WiD"/>
+                            <constraint firstItem="ai4-3H-bXA" firstAttribute="top" secondItem="oHe-oq-LNe" secondAttribute="top" id="XmS-RN-4WO"/>
+                            <constraint firstItem="8aP-wS-gaQ" firstAttribute="leading" secondItem="oHe-oq-LNe" secondAttribute="leading" id="feY-nq-0DT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oHe-oq-LNe"/>
                     </view>
                 </viewController>
