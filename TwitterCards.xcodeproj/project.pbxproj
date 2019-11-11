@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0EF8AC0DDD25A01D6C1C120F /* Pods_TwitterCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9846C921DDF0EE619F0215 /* Pods_TwitterCards.framework */; };
+		A61635CB2379E3EB0078360D /* TwitterCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61635CA2379E3EB0078360D /* TwitterCards.storyboard */; };
+		A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D02379E5A20078360D /* CardSelectionViewController.swift */; };
+		A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D22379E5BF0078360D /* CardCreationViewController.swift */; };
+		A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D42379E61C0078360D /* CardFeedViewController.swift */; };
+		A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D62379E9780078360D /* ReplyFeedViewController.swift */; };
 		A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C463A235B40C200BA986E /* AppDelegate.swift */; };
-		A68C463D235B40C200BA986E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C463C235B40C200BA986E /* ViewController.swift */; };
-		A68C4640235B40C200BA986E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C463E235B40C200BA986E /* Main.storyboard */; };
 		A68C4642235B40C400BA986E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68C4641235B40C400BA986E /* Assets.xcassets */; };
 		A68C4645235B40C400BA986E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C4643235B40C400BA986E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,10 +21,13 @@
 /* Begin PBXFileReference section */
 		242DB64D5D0B476F22F6502C /* Pods-TwitterCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCards.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCards/Pods-TwitterCards.debug.xcconfig"; sourceTree = "<group>"; };
 		5F9846C921DDF0EE619F0215 /* Pods_TwitterCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61635CA2379E3EB0078360D /* TwitterCards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TwitterCards.storyboard; sourceTree = "<group>"; };
+		A61635D02379E5A20078360D /* CardSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionViewController.swift; sourceTree = "<group>"; };
+		A61635D22379E5BF0078360D /* CardCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCreationViewController.swift; sourceTree = "<group>"; };
+		A61635D42379E61C0078360D /* CardFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeedViewController.swift; sourceTree = "<group>"; };
+		A61635D62379E9780078360D /* ReplyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyFeedViewController.swift; sourceTree = "<group>"; };
 		A68C4637235B40C200BA986E /* TwitterCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68C463A235B40C200BA986E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A68C463C235B40C200BA986E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A68C463F235B40C200BA986E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A68C4641235B40C400BA986E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A68C4644235B40C400BA986E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A68C4646235B40C400BA986E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,8 +65,8 @@
 		A686C923236860730028991B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A68C463E235B40C200BA986E /* Main.storyboard */,
 				A68C4643235B40C400BA986E /* LaunchScreen.storyboard */,
+				A61635CA2379E3EB0078360D /* TwitterCards.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -68,7 +74,10 @@
 		A686C9242368607A0028991B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A68C463C235B40C200BA986E /* ViewController.swift */,
+				A61635D02379E5A20078360D /* CardSelectionViewController.swift */,
+				A61635D22379E5BF0078360D /* CardCreationViewController.swift */,
+				A61635D42379E61C0078360D /* CardFeedViewController.swift */,
+				A61635D62379E9780078360D /* ReplyFeedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,8 +182,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68C4645235B40C400BA986E /* LaunchScreen.storyboard in Resources */,
+				A61635CB2379E3EB0078360D /* TwitterCards.storyboard in Resources */,
 				A68C4642235B40C400BA986E /* Assets.xcassets in Resources */,
-				A68C4640235B40C200BA986E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,22 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A68C463D235B40C200BA986E /* ViewController.swift in Sources */,
+				A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */,
+				A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */,
 				A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */,
+				A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */,
+				A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A68C463E235B40C200BA986E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A68C463F235B40C200BA986E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A68C4643235B40C400BA986E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
