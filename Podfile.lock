@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.0.0-rc.2)
+  - SwiftyJSON (5.0.0)
+  - TweenKit (0.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.2)
+  - SwiftyJSON (~> 5.0)
+  - TweenKit (~> 0.6)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SwiftyJSON
+    - TweenKit
+
+SPEC CHECKSUMS:
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TweenKit: 0abfef083a278b59ed784b5ea319a400ff3e14be
+
+PODFILE CHECKSUM: ae6e5c2b2a5b837642b261c7740183e4aee1c7c1
+
+COCOAPODS: 1.8.4
