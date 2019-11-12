@@ -16,6 +16,8 @@
 		A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C463A235B40C200BA986E /* AppDelegate.swift */; };
 		A68C4642235B40C400BA986E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68C4641235B40C400BA986E /* Assets.xcassets */; };
 		A68C4645235B40C400BA986E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C4643235B40C400BA986E /* LaunchScreen.storyboard */; };
+		A6949F9D237AD7F80087404C /* SelectionCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6949F9C237AD7F80087404C /* SelectionCarousel.swift */; };
+		A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */; };
 		A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FF342C237A21F20069A8AE /* CardSelectCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		A68C4641235B40C400BA986E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A68C4644235B40C400BA986E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A68C4646235B40C400BA986E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6949F9C237AD7F80087404C /* SelectionCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCarousel.swift; sourceTree = "<group>"; };
+		A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCarouselBank.swift; sourceTree = "<group>"; };
 		A6FF342C237A21F20069A8AE /* CardSelectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectCollectionCell.swift; sourceTree = "<group>"; };
 		AA706757FEADD6AC76AEAC78 /* Pods-TwitterCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCards.release.xcconfig"; path = "Target Support Files/Pods-TwitterCards/Pods-TwitterCards.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 		A686C9222368606A0028991B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A6FF342E237AD7780069A8AE /* Card Selection */,
 				A68C463A235B40C200BA986E /* AppDelegate.swift */,
 			);
 			path = Model;
@@ -121,6 +126,15 @@
 				A68C4646235B40C400BA986E /* Info.plist */,
 			);
 			path = TwitterCards;
+			sourceTree = "<group>";
+		};
+		A6FF342E237AD7780069A8AE /* Card Selection */ = {
+			isa = PBXGroup;
+			children = (
+				A6949F9C237AD7F80087404C /* SelectionCarousel.swift */,
+				A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */,
+			);
+			path = "Card Selection";
 			sourceTree = "<group>";
 		};
 		D1A34FC69BA95CDDCC8759C1 /* Pods */ = {
@@ -248,10 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */,
+				A6949F9D237AD7F80087404C /* SelectionCarousel.swift in Sources */,
 				A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */,
 				A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */,
 				A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */,
 				A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */,
+				A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */,
 				A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
