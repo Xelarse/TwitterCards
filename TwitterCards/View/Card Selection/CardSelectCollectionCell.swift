@@ -24,7 +24,7 @@ class CardSelectCollectionCell : UICollectionViewCell{
         
         if cellInfo != nil {
             backgroundImageView.image = cellInfo.backgroundImage
-            backgroundTintView.tintColor = cellInfo.backgroundColour
+            backgroundTintView.backgroundColor = cellInfo.backgroundColour
             cellLabel.text = cellInfo.title
         }
         else{

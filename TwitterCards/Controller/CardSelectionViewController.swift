@@ -13,8 +13,24 @@ class CardSelectionViewController: UIViewController {
     @IBOutlet weak var collectionView : UICollectionView!
     var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Dummy)
     
+    let colCelScaleX : CGFloat = 0.6
+    let colCelScaleY : CGFloat = 0.8
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //CollectionViewSetup
+        let colViewSize = collectionView.bounds.size
+        let colCelWidth = floor(colViewSize.width * colCelScaleX)
+        let colCelHeight = floor(colViewSize.height * colCelScaleY)
+        let colCelInsetX = (colViewSize.width - colCelWidth) / 2.0
+        let colCelInsetY = (colViewSize.height - colCelHeight) / 2.0
+        
+        let colViewLayout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        colViewLayout.itemSize = CGSize(width: colCelWidth, height: colCelHeight)
+        collectionView.contentInset = UIEdgeInsets(top: colCelInsetY, left: colCelInsetX, bottom: colCelInsetY, right: colCelInsetX)
+        
 
         //Delegate this view controler to the collection views datasource AKA this controls it
         collectionView.dataSource = self
