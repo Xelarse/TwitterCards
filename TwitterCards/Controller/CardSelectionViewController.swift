@@ -11,10 +11,11 @@ import UIKit
 class CardSelectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView : UICollectionView!
-    var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Dummy)
     
     let colCelScaleX : CGFloat = 0.8
     let colCelScaleY : CGFloat = 1
+    
+    var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Dummy)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,5 +80,16 @@ extension CardSelectionViewController : UICollectionViewDelegate, UIScrollViewDe
         offset = CGPoint(x: roundedIndex * cellWidthIncludingCellPadding - scrollView.contentInset.left, y: scrollView.contentInset.top)
         
         targetContentOffset.pointee = offset
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //After selecting a collection cell get the handles from that cell, instantiate a new cardfeedview and set it as the delegate and send it the handles
+        let handles = selectionBank.carouselCells[indexPath.item].handleArray
+        
+        let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "Card Feed") as! CardFeedViewController
+        
+        cardFeedVC.initHandles(handleArray: handles)
+        present(cardFeedVC, animated: true, completion: nil)
     }
 }
