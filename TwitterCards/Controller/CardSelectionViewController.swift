@@ -13,8 +13,8 @@ class CardSelectionViewController: UIViewController {
     @IBOutlet weak var collectionView : UICollectionView!
     var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Dummy)
     
-    let colCelScaleX : CGFloat = 0.6
-    let colCelScaleY : CGFloat = 0.8
+    let colCelScaleX : CGFloat = 0.8
+    let colCelScaleY : CGFloat = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class CardSelectionViewController: UIViewController {
 
         //Delegate this view controler to the collection views datasource AKA this controls it
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
 }
@@ -59,5 +60,24 @@ extension CardSelectionViewController : UICollectionViewDataSource{
         cell.cellInfo = thisCellInfo
         
         return cell
+    }
+}
+
+extension CardSelectionViewController : UICollectionViewDelegate, UIScrollViewDelegate{
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        //Logic for snapping the carousel to the center of the screen
+        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        let cellWidthIncludingCellPadding = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingCellPadding
+        
+        let roundedIndex = round(index)
+        
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingCellPadding - scrollView.contentInset.left, y: scrollView.contentInset.top)
+        
+        targetContentOffset.pointee = offset
     }
 }
