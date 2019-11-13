@@ -87,7 +87,7 @@ extension CardSelectionViewController : UICollectionViewDelegate, UIScrollViewDe
         //After selecting a collection cell get the handles from that cell, instantiate a new cardfeedview and set it as the delegate and send it the handles
         let handles = selectionBank.carouselCells[indexPath.item].handleArray
         
-        let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "Card Feed") as! CardFeedViewController
+        let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "CardFeedViewController") as! CardFeedViewController
         
         cardFeedVC.initHandles(handleArray: handles)
         present(cardFeedVC, animated: true, completion: nil)

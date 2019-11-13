@@ -147,7 +147,7 @@
         <!--Card Feed-->
         <scene sceneID="dqz-Cr-TJF">
             <objects>
-                <viewController title="Card Feed" id="QP8-eR-D3I" customClass="CardFeedViewController" customModule="TwitterCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardFeedViewController" title="Card Feed" id="QP8-eR-D3I" customClass="CardFeedViewController" customModule="TwitterCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tIE-1N-lTp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
