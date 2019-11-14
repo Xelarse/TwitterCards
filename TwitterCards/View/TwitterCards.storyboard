@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QMW-96-XMN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aAf-gD-UNS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="4Oa-6r-eOH">
+            <objects>
+                <navigationController id="aAf-gD-UNS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r5G-VO-g20">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QMW-96-XMN" kind="relationship" relationship="rootViewController" id="fGX-jd-uoU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ml-5U-vDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-918" y="18"/>
+        </scene>
         <!--Card Selection-->
         <scene sceneID="tWo-2c-XKw">
             <objects>
@@ -18,34 +34,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ai4-3H-bXA" userLabel="UpperThird">
-                                <rect key="frame" x="0.0" y="20" width="375" height="42"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raR-rC-i4H" userLabel="UpperView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="39"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHu-g1-Cem">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <color key="tintColor" red="0.11405044049024582" green="0.63152408599853516" blue="0.95026165246963501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVA-V1-1Ry">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                         <textAttributes key="titleTextAttributes">
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="TweetCards" largeTitleDisplayMode="always" id="o9i-WZ-PSO">
-                                                <barButtonItem key="rightBarButtonItem" systemItem="add" id="K7F-c4-qvJ"/>
-                                            </navigationItem>
+                                            <navigationItem title="TweetCards" id="0kv-G7-H4n"/>
                                         </items>
                                     </navigationBar>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="cHu-g1-Cem" firstAttribute="leading" secondItem="ai4-3H-bXA" secondAttribute="leading" id="EGO-wa-QnW"/>
-                                    <constraint firstAttribute="trailing" secondItem="cHu-g1-Cem" secondAttribute="trailing" id="UqU-Me-qQk"/>
-                                    <constraint firstItem="cHu-g1-Cem" firstAttribute="centerX" secondItem="ai4-3H-bXA" secondAttribute="centerX" id="frl-YI-F0d"/>
-                                    <constraint firstItem="cHu-g1-Cem" firstAttribute="top" secondItem="ai4-3H-bXA" secondAttribute="top" id="ppG-eU-ZvU"/>
+                                    <constraint firstAttribute="trailing" secondItem="yVA-V1-1Ry" secondAttribute="trailing" id="8LY-ll-2nC"/>
+                                    <constraint firstAttribute="bottom" secondItem="yVA-V1-1Ry" secondAttribute="bottom" id="FfH-xv-7Ja"/>
+                                    <constraint firstItem="yVA-V1-1Ry" firstAttribute="leading" secondItem="raR-rC-i4H" secondAttribute="leading" id="J0f-IO-KfT"/>
+                                    <constraint firstItem="yVA-V1-1Ry" firstAttribute="top" secondItem="raR-rC-i4H" secondAttribute="top" id="Phk-s4-2Fu"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-wS-gaQ" userLabel="LowerTwoThirds">
-                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-wS-gaQ" userLabel="LowerView">
+                                <rect key="frame" x="0.0" y="103" width="375" height="564"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-d7-npR">
-                                        <rect key="frame" x="0.0" y="15" width="375" height="575"/>
+                                        <rect key="frame" x="0.0" y="15" width="375" height="534"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="CLa-S8-VcC">
                                             <size key="itemSize" width="250" height="450"/>
@@ -55,7 +69,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CardSelectCollectionCell" id="rX9-p3-Dqk" customClass="CardSelectCollectionCell" customModule="TwitterCards" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="62.5" width="250" height="450"/>
+                                                <rect key="frame" x="0.0" y="42" width="250" height="450"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
@@ -109,18 +123,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ai4-3H-bXA" firstAttribute="leading" secondItem="oHe-oq-LNe" secondAttribute="leading" id="62k-xX-M58"/>
                             <constraint firstItem="oHe-oq-LNe" firstAttribute="trailing" secondItem="8aP-wS-gaQ" secondAttribute="trailing" id="Eie-nM-Pnv"/>
                             <constraint firstItem="8aP-wS-gaQ" firstAttribute="height" secondItem="oHe-oq-LNe" secondAttribute="height" multiplier="0.935" id="Ksa-f0-4Mt"/>
+                            <constraint firstItem="oHe-oq-LNe" firstAttribute="trailing" secondItem="raR-rC-i4H" secondAttribute="trailing" id="LN9-1y-dkK"/>
+                            <constraint firstItem="raR-rC-i4H" firstAttribute="leading" secondItem="oHe-oq-LNe" secondAttribute="leading" id="Lvj-Z2-tym"/>
                             <constraint firstItem="oHe-oq-LNe" firstAttribute="bottom" secondItem="8aP-wS-gaQ" secondAttribute="bottom" id="O6W-qd-gYL"/>
                             <constraint firstItem="oHe-oq-LNe" firstAttribute="bottom" secondItem="8aP-wS-gaQ" secondAttribute="bottom" id="PYh-o8-BcI"/>
-                            <constraint firstItem="ai4-3H-bXA" firstAttribute="height" secondItem="oHe-oq-LNe" secondAttribute="height" multiplier="0.065" id="Sgo-3Q-MLc"/>
-                            <constraint firstItem="oHe-oq-LNe" firstAttribute="trailing" secondItem="ai4-3H-bXA" secondAttribute="trailing" id="VEv-LQ-WiD"/>
-                            <constraint firstItem="ai4-3H-bXA" firstAttribute="top" secondItem="oHe-oq-LNe" secondAttribute="top" id="XmS-RN-4WO"/>
                             <constraint firstItem="8aP-wS-gaQ" firstAttribute="leading" secondItem="oHe-oq-LNe" secondAttribute="leading" id="feY-nq-0DT"/>
+                            <constraint firstItem="raR-rC-i4H" firstAttribute="height" secondItem="oHe-oq-LNe" secondAttribute="height" multiplier="0.065" id="gN8-e9-fDx"/>
+                            <constraint firstItem="raR-rC-i4H" firstAttribute="top" secondItem="oHe-oq-LNe" secondAttribute="top" id="mRF-X4-VVi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oHe-oq-LNe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wDk-ej-y1Q"/>
                     <connections>
                         <outlet property="collectionView" destination="fh9-d7-npR" id="nJZ-nu-Qmf"/>
                     </connections>
@@ -159,6 +174,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzN-Sj-OEz">
+                                <rect key="frame" x="164" y="172" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Return"/>
+                                <connections>
+                                    <action selector="onReturnButtonPressed:" destination="QP8-eR-D3I" eventType="touchUpInside" id="T5c-w9-xFD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2aY-rD-npE"/>

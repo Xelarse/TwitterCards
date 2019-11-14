@@ -9,4 +9,5 @@ target 'TwitterCards' do
   pod 'Alamofire', '~> 5.0.0-rc.2'
   pod 'SwiftyJSON', '~> 5.0'
   pod 'TweenKit', '~> 0.6'
+  pod 'Transition'
 end

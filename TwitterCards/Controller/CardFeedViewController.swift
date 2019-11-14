@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Transition
 
 class CardFeedViewController: UIViewController {
 
@@ -26,4 +27,7 @@ class CardFeedViewController: UIViewController {
         print(handles)
     }
     
+    @IBAction func onReturnButtonPressed(_ sender: Any) {
+        let _ = navigationController?.popViewController(animated: true)
+    }
 }

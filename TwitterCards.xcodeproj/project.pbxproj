@@ -13,6 +13,7 @@
 		A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D22379E5BF0078360D /* CardCreationViewController.swift */; };
 		A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D42379E61C0078360D /* CardFeedViewController.swift */; };
 		A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D62379E9780078360D /* ReplyFeedViewController.swift */; };
+		A625A4F7237CD21A00485977 /* TransitionCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625A4F6237CD21A00485977 /* TransitionCatalog.swift */; };
 		A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C463A235B40C200BA986E /* AppDelegate.swift */; };
 		A68C4642235B40C400BA986E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68C4641235B40C400BA986E /* Assets.xcassets */; };
 		A68C4645235B40C400BA986E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C4643235B40C400BA986E /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 		A61635D22379E5BF0078360D /* CardCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCreationViewController.swift; sourceTree = "<group>"; };
 		A61635D42379E61C0078360D /* CardFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeedViewController.swift; sourceTree = "<group>"; };
 		A61635D62379E9780078360D /* ReplyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyFeedViewController.swift; sourceTree = "<group>"; };
+		A625A4F6237CD21A00485977 /* TransitionCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionCatalog.swift; sourceTree = "<group>"; };
 		A68C4637235B40C200BA986E /* TwitterCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68C463A235B40C200BA986E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A68C4641235B40C400BA986E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 				A6FF342C237A21F20069A8AE /* CardSelectCollectionCell.swift */,
 			);
 			path = "Card Selection";
+			sourceTree = "<group>";
+		};
+		A625A4F5237CD1C500485977 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				A625A4F6237CD21A00485977 /* TransitionCatalog.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 		A686C9222368606A0028991B /* Model */ = {
@@ -119,6 +129,7 @@
 		A68C4639235B40C200BA986E /* TwitterCards */ = {
 			isa = PBXGroup;
 			children = (
+				A625A4F5237CD1C500485977 /* Transition */,
 				A686C9242368607A0028991B /* Controller */,
 				A686C923236860730028991B /* View */,
 				A686C9222368606A0028991B /* Model */,
@@ -261,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A625A4F7237CD21A00485977 /* TransitionCatalog.swift in Sources */,
 				A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */,
 				A6949F9D237AD7F80087404C /* SelectionCarousel.swift in Sources */,
 				A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */,
