@@ -12,10 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var myTransitions: NavigationTransition?
+    var navigationController: UINavigationController? {
+        return window?.rootViewController as? UINavigationController
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let navigationController = navigationController {
+            navigationController.interactivePopGestureRecognizer?.isEnabled = false
+            myTransitions = NavigationTransition(navigationController: navigationController)
+        }
+        
         return true
     }
 

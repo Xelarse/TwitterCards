@@ -10,28 +10,12 @@ import UIKit
 import Transition
 
 class CardSelectionViewController: UIViewController {
-
-    enum NextSceneType {
-        case Feed
-        case Add
-    }
-    
     @IBOutlet weak var collectionView : UICollectionView!
     
     let colCelScaleX : CGFloat = 0.8
     let colCelScaleY : CGFloat = 1
     
     var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Dummy)
-    
-    //Transition related vars
-    let panInteractionController = PanInteractionController(forNavigationTransitionsAtEdge: .right)
-    var transitionController: TransitionController?
-    
-    let transitionDuration : Double = 0.5
-    let transitionType : TransitionCatalog = .push
-    var nextScene : NextSceneType = .Feed
-    var handlesToSend : [String] = []
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,26 +36,6 @@ class CardSelectionViewController: UIViewController {
         //Delegate this view controler to the collection views datasource AKA this controls it
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        //Transitions setup
-        transitionController = TransitionController(forInteractiveTransitionsIn: navigationController!, transitionsSource: self, operationDelegate: self, interactionController: panInteractionController)
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    
-    func SwitchScene(){
-        switch nextScene{
-        case .Feed:
-            let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "CardFeedViewController") as! CardFeedViewController
-            cardFeedVC.initHandles(handleArray: handlesToSend)
-            navigationController?.pushViewController(cardFeedVC, animated: true)
-            
-        default: break
-        }
     }
 }
 
@@ -120,22 +84,10 @@ extension CardSelectionViewController : UICollectionViewDelegate, UIScrollViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //After selecting a collection cell get the handles from that cell, instantiate a new cardfeedview and set it as the delegate and send it the handles
-        handlesToSend = selectionBank.carouselCells[indexPath.item].handleArray
-        nextScene = .Feed
-        SwitchScene()
-    }
-}
-
-//Mark: - Transition related extensions
-extension CardSelectionViewController : TransitionsSource {
-    
-    func transitionFor(operationContext: TransitionOperationContext, interactionController: TransitionInteractionController?) -> Transition {
-        return Transition(duration: transitionDuration, animation: transitionType.transitionAnimation)
-    }
-}
-
-extension CardSelectionViewController : InteractiveNavigationTransitionOperationDelegate {
-    
-    func performOperation(operation: UINavigationController.Operation, forInteractiveTransitionIn controller: UINavigationController, gestureRecognizer: UIGestureRecognizer) {
+        let handlesToSend = selectionBank.carouselCells[indexPath.item].handleArray
+        
+        let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "CardFeedViewController") as! CardFeedViewController
+        cardFeedVC.initHandles(handleArray: handlesToSend)
+        navigationController?.pushViewController(cardFeedVC, animated: true)
     }
 }
