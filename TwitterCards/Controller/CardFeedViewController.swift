@@ -18,6 +18,11 @@ class CardFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set up right swipe gesture
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightGesture(_:)))
+        rightSwipe.direction = .right
+        view.addGestureRecognizer(rightSwipe)
+        
         testText.text = handles.description
     }
     
@@ -27,7 +32,9 @@ class CardFeedViewController: UIViewController {
         print(handles)
     }
     
-    @IBAction func onReturnButtonPressed(_ sender: Any) {
-        let _ = navigationController?.popViewController(animated: true)
+    @objc func swipeRightGesture(_ sender:UISwipeGestureRecognizer){
+        if sender.state == .ended{
+            let _ = navigationController?.popViewController(animated: true)
+        }
     }
 }

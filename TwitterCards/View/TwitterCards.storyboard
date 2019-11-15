@@ -14,7 +14,7 @@
         <scene sceneID="4Oa-6r-eOH">
             <objects>
                 <navigationController id="aAf-gD-UNS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r5G-VO-g20">
+                    <navigationBar key="navigationBar" hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r5G-VO-g20">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -37,13 +37,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raR-rC-i4H" userLabel="UpperView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="39"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVA-V1-1Ry">
+                                    <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVA-V1-1Ry">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                         <textAttributes key="titleTextAttributes">
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        </textAttributes>
+                                        <textAttributes key="largeTitleTextAttributes">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="TweetCards" id="0kv-G7-H4n"/>
+                                            <navigationItem title="TweetCards" id="0kv-G7-H4n">
+                                                <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q8Z-9k-Dks">
+                                                    <connections>
+                                                        <action selector="addButtonPressed:" destination="QMW-96-XMN" id="8MN-2H-Ba4"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
                                         </items>
                                     </navigationBar>
                                 </subviews>
@@ -147,11 +156,41 @@
         <!--Card Creation-->
         <scene sceneID="YMN-89-aIN">
             <objects>
-                <viewController title="Card Creation" id="iRN-A9-aah" customClass="CardCreationViewController" customModule="TwitterCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardCreationViewController" title="Card Creation" id="iRN-A9-aah" customClass="CardCreationViewController" customModule="TwitterCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jEV-3t-C0n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCT-Ao-Ngt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Add Card" id="8jT-Bc-W5R">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jKb-Nq-o5s">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="iRN-A9-aah" id="ufA-7b-pxe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="2OO-Tx-ntz">
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="iRN-A9-aah" id="3Jt-5j-uEX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KCT-Ao-Ngt" firstAttribute="trailing" secondItem="ojQ-6t-yct" secondAttribute="trailing" id="59r-zf-lJB"/>
+                            <constraint firstItem="KCT-Ao-Ngt" firstAttribute="leading" secondItem="ojQ-6t-yct" secondAttribute="leading" id="rqL-Bi-3OF"/>
+                            <constraint firstItem="KCT-Ao-Ngt" firstAttribute="top" secondItem="ojQ-6t-yct" secondAttribute="top" id="yUG-Q3-hcZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ojQ-6t-yct"/>
                     </view>
                 </viewController>
@@ -174,14 +213,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzN-Sj-OEz">
-                                <rect key="frame" x="164" y="172" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Return"/>
-                                <connections>
-                                    <action selector="onReturnButtonPressed:" destination="QP8-eR-D3I" eventType="touchUpInside" id="T5c-w9-xFD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2aY-rD-npE"/>

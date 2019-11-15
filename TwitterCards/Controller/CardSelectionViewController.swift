@@ -37,6 +37,12 @@ class CardSelectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        let cardAddVC = storyboard?.instantiateViewController(withIdentifier: "CardCreationViewController") as! CardCreationViewController
+        navigationController?.pushViewController(cardAddVC, animated: true)
+    }
+    
 }
 
 //MARK: - Extension logic for the CollectionViewDataSource

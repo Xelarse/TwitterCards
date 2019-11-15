@@ -16,15 +16,18 @@ class CardCreationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        //Create a new card and tell the previous scene to refresh its cards then pop back to it
+        let _ = navigationController?.popViewController(animated: true)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        //Go back to the previous scene with no changes, this can most likely stay as is
+        let _ = navigationController?.popViewController(animated: true)
 
+    }
+    
+    
 }
