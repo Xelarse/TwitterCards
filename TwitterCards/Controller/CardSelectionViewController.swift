@@ -38,6 +38,14 @@ class CardSelectionViewController: UIViewController {
         collectionView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //If this doesnt work potentailly viewDidAppear
+        super.viewWillAppear(animated)
+        
+        //Only do this if the data doesnt automatically load or for reloading the data in the local array
+        //collectionView.reloadData()
+    }
+    
     @IBAction func addButtonPressed(_ sender: Any) {
         let cardAddVC = storyboard?.instantiateViewController(withIdentifier: "CardCreationViewController") as! CardCreationViewController
         navigationController?.pushViewController(cardAddVC, animated: true)
