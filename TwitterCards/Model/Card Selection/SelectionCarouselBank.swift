@@ -38,4 +38,13 @@ class SelectionCarouselBank{
     func initWithRealData(){
     }
     
+    func stringArrayToString(array: [String]) -> String {
+        let arrayString = array.joined(separator: "-")
+        return arrayString
+    }
+    
+    func stringToStringArray(string : String) -> [String] {
+        let array = string.components(separatedBy: "-")
+        return array
+    }
 }

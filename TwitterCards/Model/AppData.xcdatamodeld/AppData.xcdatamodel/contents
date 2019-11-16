@@ -6,7 +6,7 @@
         <attribute name="backgroundColorR" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="backgroundImg" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="handlesArray" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="handlesArray" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="SelectionCard" positionX="-54" positionY="-9" width="128" height="135"/>

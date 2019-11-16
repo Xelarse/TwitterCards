@@ -17,11 +17,11 @@ extension SelectionCard {
         return NSFetchRequest<SelectionCard>(entityName: "SelectionCard")
     }
 
-    @NSManaged public var cardTitle: String
-    @NSManaged public var backgroundImg: String
-    @NSManaged public var backgroundColorR: Float
-    @NSManaged public var backgroundColorG: Float
     @NSManaged public var backgroundColorB: Float
-    @NSManaged public var handlesArray: NSObject
+    @NSManaged public var backgroundColorG: Float
+    @NSManaged public var backgroundColorR: Float
+    @NSManaged public var backgroundImg: String
+    @NSManaged public var cardTitle: String
+    @NSManaged public var handlesArray: String
 
 }

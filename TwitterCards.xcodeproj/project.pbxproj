@@ -14,8 +14,6 @@
 		A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D42379E61C0078360D /* CardFeedViewController.swift */; };
 		A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D62379E9780078360D /* ReplyFeedViewController.swift */; };
 		A6554226237F79FC004C12C1 /* AppData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6554224237F79FC004C12C1 /* AppData.xcdatamodeld */; };
-		A655422D237F7AFE004C12C1 /* SelectionCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655422B237F7AFE004C12C1 /* SelectionCard+CoreDataClass.swift */; };
-		A655422E237F7AFE004C12C1 /* SelectionCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655422C237F7AFE004C12C1 /* SelectionCard+CoreDataProperties.swift */; };
 		A676FAA3237E1B73007CBA39 /* RightsidePushPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A676FAA2237E1B73007CBA39 /* RightsidePushPop.swift */; };
 		A676FAA5237E1D19007CBA39 /* NavigationTransitionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A676FAA4237E1D19007CBA39 /* NavigationTransitionSource.swift */; };
 		A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C463A235B40C200BA986E /* AppDelegate.swift */; };
@@ -25,6 +23,8 @@
 		A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */; };
 		A6A255D7237F6511001D8576 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A255D6237F6511001D8576 /* CoreData.framework */; };
 		A6A255DC237F6AA7001D8576 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A255DB237F6AA7001D8576 /* PersistanceService.swift */; };
+		A6BFDBAA238060710057B196 /* SelectionCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFDBA8238060710057B196 /* SelectionCard+CoreDataClass.swift */; };
+		A6BFDBAB238060710057B196 /* SelectionCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFDBA9238060710057B196 /* SelectionCard+CoreDataProperties.swift */; };
 		A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FF342C237A21F20069A8AE /* CardSelectCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +37,6 @@
 		A61635D42379E61C0078360D /* CardFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeedViewController.swift; sourceTree = "<group>"; };
 		A61635D62379E9780078360D /* ReplyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyFeedViewController.swift; sourceTree = "<group>"; };
 		A6554225237F79FC004C12C1 /* AppData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppData.xcdatamodel; sourceTree = "<group>"; };
-		A655422B237F7AFE004C12C1 /* SelectionCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionCard+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A655422C237F7AFE004C12C1 /* SelectionCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A676FAA2237E1B73007CBA39 /* RightsidePushPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsidePushPop.swift; sourceTree = "<group>"; };
 		A676FAA4237E1D19007CBA39 /* NavigationTransitionSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTransitionSource.swift; sourceTree = "<group>"; };
 		A68C4637235B40C200BA986E /* TwitterCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +48,8 @@
 		A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCarouselBank.swift; sourceTree = "<group>"; };
 		A6A255D6237F6511001D8576 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A6A255DB237F6AA7001D8576 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
+		A6BFDBA8238060710057B196 /* SelectionCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionCard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A6BFDBA9238060710057B196 /* SelectionCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A6FF342C237A21F20069A8AE /* CardSelectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectCollectionCell.swift; sourceTree = "<group>"; };
 		AA706757FEADD6AC76AEAC78 /* Pods-TwitterCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCards.release.xcconfig"; path = "Target Support Files/Pods-TwitterCards/Pods-TwitterCards.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,8 +159,8 @@
 		A6FF342E237AD7780069A8AE /* Card Selection */ = {
 			isa = PBXGroup;
 			children = (
-				A655422B237F7AFE004C12C1 /* SelectionCard+CoreDataClass.swift */,
-				A655422C237F7AFE004C12C1 /* SelectionCard+CoreDataProperties.swift */,
+				A6BFDBA8238060710057B196 /* SelectionCard+CoreDataClass.swift */,
+				A6BFDBA9238060710057B196 /* SelectionCard+CoreDataProperties.swift */,
 				A6949F9C237AD7F80087404C /* SelectionCarousel.swift */,
 				A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */,
 			);
@@ -300,10 +300,10 @@
 				A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */,
 				A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */,
 				A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */,
-				A655422D237F7AFE004C12C1 /* SelectionCard+CoreDataClass.swift in Sources */,
+				A6BFDBAA238060710057B196 /* SelectionCard+CoreDataClass.swift in Sources */,
 				A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */,
 				A676FAA3237E1B73007CBA39 /* RightsidePushPop.swift in Sources */,
-				A655422E237F7AFE004C12C1 /* SelectionCard+CoreDataProperties.swift in Sources */,
+				A6BFDBAB238060710057B196 /* SelectionCard+CoreDataProperties.swift in Sources */,
 				A6554226237F79FC004C12C1 /* AppData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
