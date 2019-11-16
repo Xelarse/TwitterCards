@@ -184,10 +184,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acP-0R-QC4">
+                                <rect key="frame" x="172.5" y="576" width="30" height="71"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="iRN-A9-aah" eventType="touchUpInside" id="z7d-UD-e4Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KCT-Ao-Ngt" firstAttribute="trailing" secondItem="ojQ-6t-yct" secondAttribute="trailing" id="59r-zf-lJB"/>
+                            <constraint firstItem="acP-0R-QC4" firstAttribute="centerX" secondItem="jEV-3t-C0n" secondAttribute="centerX" id="Nck-2s-GTg"/>
+                            <constraint firstItem="ojQ-6t-yct" firstAttribute="bottom" secondItem="acP-0R-QC4" secondAttribute="bottom" constant="20" id="ZN6-7F-vFi"/>
                             <constraint firstItem="KCT-Ao-Ngt" firstAttribute="leading" secondItem="ojQ-6t-yct" secondAttribute="leading" id="rqL-Bi-3OF"/>
                             <constraint firstItem="KCT-Ao-Ngt" firstAttribute="top" secondItem="ojQ-6t-yct" secondAttribute="top" id="yUG-Q3-hcZ"/>
                         </constraints>
@@ -196,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9y-Z8-M0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="19"/>
+            <point key="canvasLocation" x="896.79999999999995" y="18.440779610194905"/>
         </scene>
         <!--Card Feed-->
         <scene sceneID="dqz-Cr-TJF">

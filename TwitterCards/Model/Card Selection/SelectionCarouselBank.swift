@@ -36,6 +36,54 @@ class SelectionCarouselBank{
     }
     
     func initWithRealData(){
+        let storedSelectionCards = PersistanceService.fetch(_objectType: SelectionCard.self)
+        
+        storedSelectionCards.forEach { (card) in
+            let selectionCarouselItem = SelectionCarousel()
+            selectionCarouselItem.title = card.cardTitle
+            selectionCarouselItem.backgroundImage = UIImage(named: card.backgroundImg)!
+            selectionCarouselItem.backgroundColour = UIColor(red: CGFloat(card.backgroundColorR), green: CGFloat(card.backgroundColorG), blue: CGFloat(card.backgroundColorB), alpha: 0.65)
+            selectionCarouselItem.handleArray = stringToStringArray(string: card.handlesArray)
+            carouselCells.append(selectionCarouselItem)
+        }
+        
+    }
+    
+    func saveUpdatedBank(){
+        //First delete whats currently stored in the bank then save the new stuff not the most effecient but quick and dirty
+        let existingCards = PersistanceService.fetch(_objectType: SelectionCard.self)
+        existingCards.forEach { (card) in
+            PersistanceService.context.delete(card)
+        }
+        
+        //TODO find a replacement to save out custom images for custom backgrounds
+        carouselCells.forEach { (cell) in
+            let selectCard = SelectionCard(context: PersistanceService.context)
+            selectCard.cardTitle = cell.title
+            selectCard.backgroundImg = "blank"
+            selectCard.handlesArray = stringArrayToString(array: cell.handleArray)
+            
+            if let colorComponents = cell.backgroundColour.cgColor.components {
+                selectCard.backgroundColorR = Float(colorComponents[0])
+                selectCard.backgroundColorG = Float(colorComponents[1])
+                selectCard.backgroundColorB = Float(colorComponents[2])
+            }
+            else {
+                selectCard.backgroundColorR = 0.0
+                selectCard.backgroundColorG = 0.0
+                selectCard.backgroundColorB = 0.0
+            }
+        }
+        PersistanceService.saveContext()
+    }
+    
+    func addNewCardToBank(title : String, handles : [String], color : UIColor, backgroundImgName : String){
+        let newCell = SelectionCarousel(cellTitle: title, cellBgColour: color, cellBgImage: UIImage(named: backgroundImgName)!, handles: handles)
+        carouselCells.append(newCell)
+    }
+    
+    func removeCardFromBank(index: Int){
+        carouselCells.remove(at: index)
     }
     
     func stringArrayToString(array: [String]) -> String {

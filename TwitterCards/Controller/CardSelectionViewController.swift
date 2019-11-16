@@ -15,7 +15,7 @@ class CardSelectionViewController: UIViewController {
     let colCelScaleX : CGFloat = 0.8
     let colCelScaleY : CGFloat = 1
     
-    var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Dummy)
+    var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Real)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +38,14 @@ class CardSelectionViewController: UIViewController {
         collectionView.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //If this doesnt work potentailly viewDidAppear
-        super.viewWillAppear(animated)
-        
-        //Only do this if the data doesnt automatically load or for reloading the data in the local array
-        //collectionView.reloadData()
+    override func viewDidDisappear(_ animated: Bool) {
+        selectionBank.saveUpdatedBank()
+        super.viewDidDisappear(animated)
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
         let cardAddVC = storyboard?.instantiateViewController(withIdentifier: "CardCreationViewController") as! CardCreationViewController
+        cardAddVC.newCardDelegate = self
         navigationController?.pushViewController(cardAddVC, animated: true)
     }
     
@@ -103,5 +101,19 @@ extension CardSelectionViewController : UICollectionViewDelegate, UIScrollViewDe
         let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "CardFeedViewController") as! CardFeedViewController
         cardFeedVC.initHandles(handleArray: handlesToSend)
         navigationController?.pushViewController(cardFeedVC, animated: true)
+    }
+}
+
+//MARK: - Extension logic for the CardCreationViewController
+
+extension CardSelectionViewController : NewCardDelegate {
+    func passNewCardDetails(title : String, handles : [String]){
+        //Generates the properties to add to the array of SelectionCarouselBank
+        
+        let cardColor = UIColor(red: CGFloat.random(in: 0..<1), green: CGFloat.random(in: 0..<1), blue: CGFloat.random(in: 0..<1), alpha: 0.6)
+        
+        selectionBank.addNewCardToBank(title: title, handles: handles, color: cardColor, backgroundImgName: "blank")
+        
+        self.collectionView.reloadData()
     }
 }

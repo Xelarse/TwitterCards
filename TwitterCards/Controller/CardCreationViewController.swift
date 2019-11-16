@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol NewCardDelegate {
+    func passNewCardDetails(title : String, handles : [String])
+}
+
 class CardCreationViewController: UIViewController {
+    
+    var newCardDelegate : NewCardDelegate!
+    
+    var handles : [String] = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +26,29 @@ class CardCreationViewController: UIViewController {
     
     
     @IBAction func doneButtonPressed(_ sender: Any) {
-        //Create a new card and tell the previous scene to refresh its cards then pop back to it
-        let _ = navigationController?.popViewController(animated: true)
-
+        let alert = UIAlertController(title: "Enter Title", message: "Give a name to the new card", preferredStyle: .alert)
+        
+        alert.addTextField { (field) in
+            field.placeholder = "Enter title here"
+            field.keyboardType = .default
+        }
+        
+        alert.addAction(UIAlertAction(title: "Finish", style: .default, handler: { (UIAlertAction) in
+            if let inputField = alert.textFields?[0] {
+                if let inputText = inputField.text {
+                    self.newCardDelegate.passNewCardDetails(title: inputText, handles: self.handles)
+                    let _ =  self.navigationController?.popViewController(animated: true)
+                }
+                else {
+                    self.invalidTitleEntry()
+                }
+            }
+            else{
+                self.invalidTitleEntry()
+            }
+        }))
+        
+        self.present(alert, animated: true)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -29,5 +57,60 @@ class CardCreationViewController: UIViewController {
 
     }
     
+    @IBAction func addButtonPressed(_ sender: Any) {
+        presentAddWindow()
+    }
     
+    func presentAddWindow(){
+        let alert = UIAlertController(title: "Add New Handle or Hashtag", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { (field) in
+            field.placeholder = "Enter the '@' or '#' here!"
+            field.keyboardType = .default
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (UIAlertAction) in
+            if let input = alert.textFields?[0]{
+                if let inputText = input.text {
+                    if inputText.first == "@" || inputText.first == "#"{
+                        self.handles.append(inputText)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    else {
+                        self.invalidTwitterEntryAlert()
+                    }
+                }
+                else {
+                    self.invalidTwitterEntryAlert()
+                }
+            }
+            else {
+                self.invalidTwitterEntryAlert()
+            }
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func invalidTwitterEntryAlert(){
+        let alert = UIAlertController(title: "Error", message: "Must enter a valid Twitter handle or Hashtag", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func invalidTitleEntry(){
+        let alert = UIAlertController(title: "Error", message: "Invalid title entry", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+    }
 }
