@@ -25,6 +25,7 @@
 		A6A255DC237F6AA7001D8576 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A255DB237F6AA7001D8576 /* PersistanceService.swift */; };
 		A6BFDBAA238060710057B196 /* SelectionCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFDBA8238060710057B196 /* SelectionCard+CoreDataClass.swift */; };
 		A6BFDBAB238060710057B196 /* SelectionCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFDBA9238060710057B196 /* SelectionCard+CoreDataProperties.swift */; };
+		A6D76B552380B89F006B6A33 /* CardCreationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D76B542380B89F006B6A33 /* CardCreationTableCell.swift */; };
 		A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FF342C237A21F20069A8AE /* CardSelectCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		A6A255DB237F6AA7001D8576 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		A6BFDBA8238060710057B196 /* SelectionCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionCard+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A6BFDBA9238060710057B196 /* SelectionCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A6D76B542380B89F006B6A33 /* CardCreationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCreationTableCell.swift; sourceTree = "<group>"; };
 		A6FF342C237A21F20069A8AE /* CardSelectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectCollectionCell.swift; sourceTree = "<group>"; };
 		AA706757FEADD6AC76AEAC78 /* Pods-TwitterCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCards.release.xcconfig"; path = "Target Support Files/Pods-TwitterCards/Pods-TwitterCards.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +76,14 @@
 				5F9846C921DDF0EE619F0215 /* Pods_TwitterCards.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A601EB2B2380B75600F29D6E /* Card Creation */ = {
+			isa = PBXGroup;
+			children = (
+				A6D76B542380B89F006B6A33 /* CardCreationTableCell.swift */,
+			);
+			path = "Card Creation";
 			sourceTree = "<group>";
 		};
 		A61635DA237A1B490078360D /* Card Selection */ = {
@@ -107,6 +117,7 @@
 		A686C923236860730028991B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A601EB2B2380B75600F29D6E /* Card Creation */,
 				A61635DA237A1B490078360D /* Card Selection */,
 				A68C4643235B40C400BA986E /* LaunchScreen.storyboard */,
 				A61635CA2379E3EB0078360D /* TwitterCards.storyboard */,
@@ -304,6 +315,7 @@
 				A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */,
 				A676FAA3237E1B73007CBA39 /* RightsidePushPop.swift in Sources */,
 				A6BFDBAB238060710057B196 /* SelectionCard+CoreDataProperties.swift in Sources */,
+				A6D76B552380B89F006B6A33 /* CardCreationTableCell.swift in Sources */,
 				A6554226237F79FC004C12C1 /* AppData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

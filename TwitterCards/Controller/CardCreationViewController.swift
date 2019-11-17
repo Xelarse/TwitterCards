@@ -15,13 +15,15 @@ protocol NewCardDelegate {
 class CardCreationViewController: UIViewController {
     
     var newCardDelegate : NewCardDelegate!
+    @IBOutlet weak var tableView : UITableView!
     
     var handles : [String] = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
     }
     
     
@@ -32,6 +34,10 @@ class CardCreationViewController: UIViewController {
             field.placeholder = "Enter title here"
             field.keyboardType = .default
         }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
         
         alert.addAction(UIAlertAction(title: "Finish", style: .default, handler: { (UIAlertAction) in
             if let inputField = alert.textFields?[0] {
@@ -78,6 +84,10 @@ class CardCreationViewController: UIViewController {
                 if let inputText = input.text {
                     if inputText.first == "@" || inputText.first == "#"{
                         self.handles.append(inputText)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.tableView.setContentOffset(CGPoint.zero, animated:true)
+                        }
                         self.dismiss(animated: true, completion: nil)
                     }
                     else {
@@ -112,5 +122,33 @@ class CardCreationViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
             self.dismiss(animated: true, completion: nil)
         }))
+    }
+}
+
+//MARK: - TableView Extensions
+extension CardCreationViewController : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return handles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CardCreationTableCell") as! CardCreationTableCell
+        cell.handleString = handles[indexPath.item]
+        cell.creationViewCellDeleteDelegate = self
+        return cell
+    }
+}
+
+
+//MARK: - CardCreationTableCell extensions
+extension CardCreationViewController : CreationViewCellDeleteDelegate {
+    func removeCellString(name: String) {
+        if let givenIndex = handles.firstIndex(of: name){
+            self.handles.remove(at: givenIndex)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.tableView.setContentOffset(CGPoint.zero, animated:true)
+            }
+        }
     }
 }
