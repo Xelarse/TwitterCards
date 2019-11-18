@@ -16,6 +16,7 @@ class CardCreationViewController: UIViewController {
     
     var newCardDelegate : NewCardDelegate!
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var textField: UITextField!
     
     var handles : [String] = [String]()
     
@@ -24,10 +25,67 @@ class CardCreationViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     
     @IBAction func doneButtonPressed(_ sender: Any) {
+        enterCardTitleAlert()
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        //Go back to the previous scene with no changes, this can most likely stay as is
+        let _ = navigationController?.popViewController(animated: true)
+
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        checkAndAddHandleToArray()
+    }
+    
+    func checkAndAddHandleToArray(){
+        if let fieldText : String = textField.text{
+            if fieldText.first == "@" || fieldText.first == "#" {
+                handles.append(fieldText)
+                
+                let indexPath = IndexPath(row: handles.count - 1, section: 0)
+                
+                tableView.beginUpdates()
+                tableView.insertRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+                
+                textField.text = ""
+                view.endEditing(true)
+            }
+            else{
+                invalidTwitterEntryAlert()
+            }
+        }
+        else{
+            invalidTwitterEntryAlert()
+        }
+    }
+    
+    func invalidTwitterEntryAlert(){
+        let alert = UIAlertController(title: "Error", message: "Must enter a valid Twitter handle or Hashtag", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func invalidTitleEntryAlert(){
+        let alert = UIAlertController(title: "Error", message: "Invalid title entry", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+    }
+    
+    func enterCardTitleAlert(){
         let alert = UIAlertController(title: "Enter Title", message: "Give a name to the new card", preferredStyle: .alert)
         
         alert.addTextField { (field) in
@@ -46,87 +104,20 @@ class CardCreationViewController: UIViewController {
                     let _ =  self.navigationController?.popViewController(animated: true)
                 }
                 else {
-                    self.invalidTitleEntry()
+                    self.invalidTitleEntryAlert()
                 }
             }
             else{
-                self.invalidTitleEntry()
+                self.invalidTitleEntryAlert()
             }
         }))
         
         self.present(alert, animated: true)
-    }
-    
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-        //Go back to the previous scene with no changes, this can most likely stay as is
-        let _ = navigationController?.popViewController(animated: true)
-
-    }
-    
-    @IBAction func addButtonPressed(_ sender: Any) {
-        presentAddWindow()
-    }
-    
-    func presentAddWindow(){
-        let alert = UIAlertController(title: "Add New Handle or Hashtag", message: nil, preferredStyle: .alert)
-        
-        alert.addTextField { (field) in
-            field.placeholder = "Enter the '@' or '#' here!"
-            field.keyboardType = .default
-        }
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (UIAlertAction) in
-            if let input = alert.textFields?[0]{
-                if let inputText = input.text {
-                    if inputText.first == "@" || inputText.first == "#"{
-                        self.handles.append(inputText)
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                            self.tableView.setContentOffset(CGPoint.zero, animated:true)
-                        }
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                    else {
-                        self.invalidTwitterEntryAlert()
-                    }
-                }
-                else {
-                    self.invalidTwitterEntryAlert()
-                }
-            }
-            else {
-                self.invalidTwitterEntryAlert()
-            }
-        }))
-        
-        self.present(alert, animated: true)
-    }
-    
-    func invalidTwitterEntryAlert(){
-        let alert = UIAlertController(title: "Error", message: "Must enter a valid Twitter handle or Hashtag", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        
-        self.present(alert, animated: true)
-    }
-    
-    func invalidTitleEntry(){
-        let alert = UIAlertController(title: "Error", message: "Invalid title entry", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
-        }))
     }
 }
 
 //MARK: - TableView Extensions
-extension CardCreationViewController : UITableViewDataSource{
+extension CardCreationViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return handles.count
     }
@@ -134,21 +125,22 @@ extension CardCreationViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCreationTableCell") as! CardCreationTableCell
         cell.handleString = handles[indexPath.item]
-        cell.creationViewCellDeleteDelegate = self
         return cell
     }
-}
-
-
-//MARK: - CardCreationTableCell extensions
-extension CardCreationViewController : CreationViewCellDeleteDelegate {
-    func removeCellString(name: String) {
-        if let givenIndex = handles.firstIndex(of: name){
-            self.handles.remove(at: givenIndex)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.tableView.setContentOffset(CGPoint.zero, animated:true)
-            }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete{
+            handles.remove(at: indexPath.row)
+            
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
         }
     }
+    
 }

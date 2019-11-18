@@ -8,14 +8,8 @@
 
 import UIKit
 
-protocol CreationViewCellDeleteDelegate {
-    func removeCellString(name : String)
-}
-
 class CardCreationTableCell : UITableViewCell {
     @IBOutlet weak var cellText : UILabel!
-    
-    var creationViewCellDeleteDelegate : CreationViewCellDeleteDelegate!
     
     var handleString : String = "" {
         didSet{
@@ -25,9 +19,5 @@ class CardCreationTableCell : UITableViewCell {
     
     func updateUI(){
         cellText.text = handleString
-    }
-    
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-        creationViewCellDeleteDelegate.removeCellString(name: handleString)
     }
 }
