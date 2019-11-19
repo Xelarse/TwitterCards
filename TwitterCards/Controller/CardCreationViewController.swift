@@ -142,5 +142,4 @@ extension CardCreationViewController : UITableViewDataSource, UITableViewDelegat
             tableView.endUpdates()
         }
     }
-    
 }

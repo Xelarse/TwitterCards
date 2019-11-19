@@ -22,6 +22,7 @@
 		A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C463A235B40C200BA986E /* AppDelegate.swift */; };
 		A68C4642235B40C400BA986E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68C4641235B40C400BA986E /* Assets.xcassets */; };
 		A68C4645235B40C400BA986E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C4643235B40C400BA986E /* LaunchScreen.storyboard */; };
+		A68E0102238485F30077E02E /* CardFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E0101238485F30077E02E /* CardFeedTableCell.swift */; };
 		A6949F9D237AD7F80087404C /* SelectionCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6949F9C237AD7F80087404C /* SelectionCarousel.swift */; };
 		A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */; };
 		A6A255D7237F6511001D8576 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A255D6237F6511001D8576 /* CoreData.framework */; };
@@ -51,6 +52,7 @@
 		A68C4641235B40C400BA986E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A68C4644235B40C400BA986E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A68C4646235B40C400BA986E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A68E0101238485F30077E02E /* CardFeedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeedTableCell.swift; sourceTree = "<group>"; };
 		A6949F9C237AD7F80087404C /* SelectionCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCarousel.swift; sourceTree = "<group>"; };
 		A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCarouselBank.swift; sourceTree = "<group>"; };
 		A6A255D6237F6511001D8576 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -134,6 +136,7 @@
 		A686C923236860730028991B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A68E0100238485DC0077E02E /* Card Feed */,
 				A601EB2B2380B75600F29D6E /* Card Creation */,
 				A61635DA237A1B490078360D /* Card Selection */,
 				A68C4643235B40C400BA986E /* LaunchScreen.storyboard */,
@@ -182,6 +185,14 @@
 				A68C4646235B40C400BA986E /* Info.plist */,
 			);
 			path = TwitterCards;
+			sourceTree = "<group>";
+		};
+		A68E0100238485DC0077E02E /* Card Feed */ = {
+			isa = PBXGroup;
+			children = (
+				A68E0101238485F30077E02E /* CardFeedTableCell.swift */,
+			);
+			path = "Card Feed";
 			sourceTree = "<group>";
 		};
 		A6FF342E237AD7780069A8AE /* Card Selection */ = {
@@ -323,6 +334,7 @@
 				A6A255DC237F6AA7001D8576 /* PersistanceService.swift in Sources */,
 				A6949F9D237AD7F80087404C /* SelectionCarousel.swift in Sources */,
 				A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */,
+				A68E0102238485F30077E02E /* CardFeedTableCell.swift in Sources */,
 				A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */,
 				A676FAA5237E1D19007CBA39 /* NavigationTransitionSource.swift in Sources */,
 				A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */,
