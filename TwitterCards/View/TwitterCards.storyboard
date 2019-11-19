@@ -47,6 +47,11 @@
                                         </textAttributes>
                                         <items>
                                             <navigationItem title="TweetCards" id="0kv-G7-H4n">
+                                                <barButtonItem key="leftBarButtonItem" systemItem="edit" id="aO2-81-Qzx">
+                                                    <connections>
+                                                        <action selector="editButtonPressed:" destination="QMW-96-XMN" id="OQS-Qs-wV2"/>
+                                                    </connections>
+                                                </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q8Z-9k-Dks">
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="QMW-96-XMN" id="8MN-2H-Ba4"/>
@@ -147,6 +152,7 @@
                     <navigationItem key="navigationItem" id="wDk-ej-y1Q"/>
                     <connections>
                         <outlet property="collectionView" destination="fh9-d7-npR" id="nJZ-nu-Qmf"/>
+                        <outlet property="editButton" destination="aO2-81-Qzx" id="FAf-wn-9ev"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AS9-VL-a2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
