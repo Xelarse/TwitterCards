@@ -69,6 +69,17 @@ class CardSelectionViewController: UIViewController {
         }
         navigationItem.leftBarButtonItem = button
         editingMode = !editingMode
+        setCellEditingMode(isEnabled: editingMode)
+    }
+    
+    func setCellEditingMode(isEnabled : Bool){
+        let colViewCells : [CardSelectCollectionCell] = collectionView.visibleCells as! [CardSelectCollectionCell]
+        
+        if colViewCells.count > 0 {
+            for cell in colViewCells {
+                cell.setEditingLayout(isEnabled: isEnabled)
+            }
+        }
     }
 }
 
@@ -91,6 +102,7 @@ extension CardSelectionViewController : UICollectionViewDataSource{
         let thisCellInfo = selectionBank.carouselCells[indexPath.item]
         
         cell.cellInfo = thisCellInfo
+        cell.cellDelegate = self
         
         return cell
     }
@@ -117,11 +129,7 @@ extension CardSelectionViewController : UICollectionViewDelegate, UIScrollViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //After selecting a collection cell get the handles from that cell, instantiate a new cardfeedview and set it as the delegate and send it the handles
         
-        if editingMode{
-            selectionBank.carouselCells.remove(at: indexPath.row)
-            collectionView.deleteItems(at: [indexPath])
-        }
-        else {
+        if !editingMode{
             let handlesToSend = selectionBank.carouselCells[indexPath.item].handleArray
             
             let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "CardFeedViewController") as! CardFeedViewController
@@ -142,5 +150,16 @@ extension CardSelectionViewController : NewCardDelegate {
         selectionBank.addNewCardToBank(title: title, handles: handles, color: cardColor, backgroundImgName: "blank")
         
         self.collectionView.reloadData()
+    }
+}
+
+//MARK: - Extension logic for CardSelectCollectionCellDeletgate
+extension CardSelectionViewController : CardSelectCollectionCellDelegate {
+    func removeCell(cellInfo: SelectionCarousel) {
+        if let index = selectionBank.carouselCells.firstIndex(where: {$0.title == cellInfo.title}){
+            let indexPath = IndexPath(row: index, section: 0)
+            selectionBank.carouselCells.remove(at: indexPath.row)
+            collectionView.deleteItems(at: [indexPath])
+        }
     }
 }

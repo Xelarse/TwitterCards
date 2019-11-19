@@ -8,10 +8,21 @@
 
 import UIKit
 
+protocol CardSelectCollectionCellDelegate {
+    func removeCell(cellInfo: SelectionCarousel)
+}
+
 class CardSelectCollectionCell : UICollectionViewCell{
+    
+    @IBOutlet weak var normalView: UIView!
+    @IBOutlet weak var editingView: UIView!
+    
     @IBOutlet weak var backgroundImageView : UIImageView!
     @IBOutlet weak var backgroundTintView : UIView!
+    @IBOutlet weak var editingTintView: UIView!
     @IBOutlet weak var cellLabel : UILabel!
+    
+    var cellDelegate : CardSelectCollectionCellDelegate!
     
     var cellInfo : SelectionCarousel!{
         didSet{
@@ -37,5 +48,17 @@ class CardSelectCollectionCell : UICollectionViewCell{
         backgroundImageView.layer.masksToBounds = true
         backgroundTintView.layer.cornerRadius = 10.0
         backgroundTintView.layer.masksToBounds = true
+        editingTintView.layer.cornerRadius = 10.0
+        editingTintView.layer.masksToBounds = true
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        cellDelegate.removeCell(cellInfo: cellInfo)
+    }
+    
+    
+    func setEditingLayout(isEnabled : Bool){
+        normalView.isHidden = isEnabled
+        editingView.isHidden = !isEnabled
     }
 }
