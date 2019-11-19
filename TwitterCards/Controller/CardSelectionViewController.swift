@@ -12,6 +12,7 @@ import Transition
 class CardSelectionViewController: UIViewController {
     @IBOutlet weak var collectionView : UICollectionView!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var noCardsLabel: UILabel!
     
     let colCelScaleX : CGFloat = 0.8
     let colCelScaleY : CGFloat = 1
@@ -39,6 +40,10 @@ class CardSelectionViewController: UIViewController {
         //Delegate this view controler to the collection views datasource AKA this controls it
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        if selectionBank.carouselCells.count == 0{
+            noCardsLabel.isHidden = false
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -54,7 +59,6 @@ class CardSelectionViewController: UIViewController {
     
     @IBAction func editButtonPressed(_ sender: Any) {
         toggleEditing()
-        print("Editing status: " + String(editingMode))
     }
     
     func toggleEditing(){
@@ -149,6 +153,8 @@ extension CardSelectionViewController : NewCardDelegate {
         
         selectionBank.addNewCardToBank(title: title, handles: handles, color: cardColor, backgroundImgName: "blank")
         
+        noCardsLabel.isHidden = true
+        
         self.collectionView.reloadData()
     }
 }
@@ -160,6 +166,11 @@ extension CardSelectionViewController : CardSelectCollectionCellDelegate {
             let indexPath = IndexPath(row: index, section: 0)
             selectionBank.carouselCells.remove(at: indexPath.row)
             collectionView.deleteItems(at: [indexPath])
+            
+            if selectionBank.carouselCells.count == 0 {
+                noCardsLabel.isHidden = false
+                toggleEditing()
+            }
         }
     }
 }

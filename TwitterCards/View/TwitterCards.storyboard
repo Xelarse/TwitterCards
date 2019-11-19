@@ -171,12 +171,24 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FG-kj-Qjj">
+                                        <rect key="frame" x="40" y="20" width="295" height="524"/>
+                                        <string key="text">No cards currently created!
+Select the "+" in the top right to get started</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="fh9-d7-npR" firstAttribute="centerX" secondItem="8aP-wS-gaQ" secondAttribute="centerX" id="F5o-qf-69O"/>
+                                    <constraint firstAttribute="trailing" secondItem="1FG-kj-Qjj" secondAttribute="trailing" constant="40" id="R5D-N3-Fs1"/>
                                     <constraint firstItem="fh9-d7-npR" firstAttribute="width" secondItem="8aP-wS-gaQ" secondAttribute="width" id="XGR-ut-SlR"/>
+                                    <constraint firstAttribute="bottom" secondItem="1FG-kj-Qjj" secondAttribute="bottom" constant="20" id="g39-pm-E2P"/>
                                     <constraint firstAttribute="bottom" secondItem="fh9-d7-npR" secondAttribute="bottom" constant="15" id="px5-at-6T8"/>
                                     <constraint firstItem="fh9-d7-npR" firstAttribute="top" secondItem="8aP-wS-gaQ" secondAttribute="top" constant="15" id="uml-cc-aaC"/>
+                                    <constraint firstItem="1FG-kj-Qjj" firstAttribute="top" secondItem="8aP-wS-gaQ" secondAttribute="top" constant="20" id="usI-3I-M7w"/>
+                                    <constraint firstItem="1FG-kj-Qjj" firstAttribute="leading" secondItem="8aP-wS-gaQ" secondAttribute="leading" constant="40" id="wGJ-yE-ruq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -198,6 +210,7 @@
                     <connections>
                         <outlet property="collectionView" destination="fh9-d7-npR" id="nJZ-nu-Qmf"/>
                         <outlet property="editButton" destination="aO2-81-Qzx" id="FAf-wn-9ev"/>
+                        <outlet property="noCardsLabel" destination="1FG-kj-Qjj" id="UpY-7z-UJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AS9-VL-a2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
