@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0EF8AC0DDD25A01D6C1C120F /* Pods_TwitterCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9846C921DDF0EE619F0215 /* Pods_TwitterCards.framework */; };
+		A611BE962384287900027405 /* TwitterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A611BE952384287900027405 /* TwitterApi.swift */; };
+		A611BE982384296A00027405 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A611BE972384296A00027405 /* FeedData.swift */; };
+		A611BE9A2384297500027405 /* FeedDataBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A611BE992384297500027405 /* FeedDataBank.swift */; };
 		A61635CB2379E3EB0078360D /* TwitterCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61635CA2379E3EB0078360D /* TwitterCards.storyboard */; };
 		A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D02379E5A20078360D /* CardSelectionViewController.swift */; };
 		A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D22379E5BF0078360D /* CardCreationViewController.swift */; };
@@ -32,6 +35,9 @@
 /* Begin PBXFileReference section */
 		242DB64D5D0B476F22F6502C /* Pods-TwitterCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCards.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCards/Pods-TwitterCards.debug.xcconfig"; sourceTree = "<group>"; };
 		5F9846C921DDF0EE619F0215 /* Pods_TwitterCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A611BE952384287900027405 /* TwitterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterApi.swift; sourceTree = "<group>"; };
+		A611BE972384296A00027405 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
+		A611BE992384297500027405 /* FeedDataBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataBank.swift; sourceTree = "<group>"; };
 		A61635CA2379E3EB0078360D /* TwitterCards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TwitterCards.storyboard; sourceTree = "<group>"; };
 		A61635D02379E5A20078360D /* CardSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionViewController.swift; sourceTree = "<group>"; };
 		A61635D22379E5BF0078360D /* CardCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCreationViewController.swift; sourceTree = "<group>"; };
@@ -103,13 +109,24 @@
 			path = Transition;
 			sourceTree = "<group>";
 		};
+		A64FC6B02384281300C9BD7A /* Card Feed */ = {
+			isa = PBXGroup;
+			children = (
+				A611BE972384296A00027405 /* FeedData.swift */,
+				A611BE992384297500027405 /* FeedDataBank.swift */,
+			);
+			path = "Card Feed";
+			sourceTree = "<group>";
+		};
 		A686C9222368606A0028991B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A6554224237F79FC004C12C1 /* AppData.xcdatamodeld */,
+				A64FC6B02384281300C9BD7A /* Card Feed */,
 				A6FF342E237AD7780069A8AE /* Card Selection */,
 				A68C463A235B40C200BA986E /* AppDelegate.swift */,
 				A6A255DB237F6AA7001D8576 /* PersistanceService.swift */,
+				A611BE952384287900027405 /* TwitterApi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,11 +327,14 @@
 				A676FAA5237E1D19007CBA39 /* NavigationTransitionSource.swift in Sources */,
 				A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */,
 				A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */,
+				A611BE962384287900027405 /* TwitterApi.swift in Sources */,
 				A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */,
 				A6BFDBAA238060710057B196 /* SelectionCard+CoreDataClass.swift in Sources */,
+				A611BE982384296A00027405 /* FeedData.swift in Sources */,
 				A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */,
 				A676FAA3237E1B73007CBA39 /* RightsidePushPop.swift in Sources */,
 				A6BFDBAB238060710057B196 /* SelectionCard+CoreDataProperties.swift in Sources */,
+				A611BE9A2384297500027405 /* FeedDataBank.swift in Sources */,
 				A6D76B552380B89F006B6A33 /* CardCreationTableCell.swift in Sources */,
 				A6554226237F79FC004C12C1 /* AppData.xcdatamodeld in Sources */,
 			);
