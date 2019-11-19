@@ -13,6 +13,7 @@ class CardFeedViewController: UIViewController {
 
     @IBOutlet weak var testText : UILabel!
     
+    var feedBank : FeedDataBank!
     var handles : [String] = []
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class CardFeedViewController: UIViewController {
         view.addGestureRecognizer(rightSwipe)
         
         testText.text = handles.description
+        feedBank = FeedDataBank(initType: .Dummy, handles: handles)
     }
     
     func initHandles(handleArray : [String]){
