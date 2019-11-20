@@ -358,7 +358,7 @@ Select the "+" in the top right to get started</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IpK-r6-0t5" userLabel="TweetTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IpK-r6-0t5" userLabel="TweetTableView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -441,21 +441,21 @@ Select the "+" in the top right to get started</string>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-lC-csI">
-                                                            <rect key="frame" x="20" y="64.5" width="335" height="200"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-lC-csI">
+                                                            <rect key="frame" x="37.5" y="64.5" width="300" height="200"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="200" id="5an-Vh-0fn"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Xra-lC-csI" firstAttribute="leading" secondItem="J8N-7Q-g0c" secondAttribute="leading" constant="20" id="49S-Nh-dgs"/>
                                                         <constraint firstItem="WQt-U1-yZ5" firstAttribute="top" secondItem="J8N-7Q-g0c" secondAttribute="top" constant="10" id="MUL-Ij-UFe"/>
                                                         <constraint firstItem="Xra-lC-csI" firstAttribute="top" secondItem="WQt-U1-yZ5" secondAttribute="bottom" constant="10" id="cDL-Bg-M9Z"/>
                                                         <constraint firstItem="WQt-U1-yZ5" firstAttribute="leading" secondItem="J8N-7Q-g0c" secondAttribute="leading" constant="25" id="cPc-O4-Ltd"/>
                                                         <constraint firstAttribute="trailing" secondItem="WQt-U1-yZ5" secondAttribute="trailing" constant="25" id="cep-nb-jqI"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Xra-lC-csI" secondAttribute="trailing" constant="20" id="h2q-eh-1mz"/>
                                                         <constraint firstAttribute="bottom" secondItem="Xra-lC-csI" secondAttribute="bottom" constant="10" id="nzc-ZS-ccN"/>
+                                                        <constraint firstItem="Xra-lC-csI" firstAttribute="centerX" secondItem="J8N-7Q-g0c" secondAttribute="centerX" id="qQr-TF-ehx"/>
+                                                        <constraint firstItem="Xra-lC-csI" firstAttribute="width" secondItem="J8N-7Q-g0c" secondAttribute="width" multiplier="0.8" id="yLT-FJ-htV"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
