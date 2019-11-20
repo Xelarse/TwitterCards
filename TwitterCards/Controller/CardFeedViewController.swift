@@ -50,9 +50,19 @@ extension CardFeedViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CardFeedTableCell") as! CardFeedTableCell
-        cell.cellData = feedBank.tweets[indexPath.row]
-        return cell
+        let cellsData = feedBank.tweets[indexPath.row]
+        
+        if cellsData.tweetImage != nil {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CardFeedImageTableCell") as! CardFeedImageTableCell
+            cell.cellData = cellsData
+            return cell
+        }
+        
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CardFeedTableCell") as! CardFeedTableCell
+            cell.cellData = cellsData
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

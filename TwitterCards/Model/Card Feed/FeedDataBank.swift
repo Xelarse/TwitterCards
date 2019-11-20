@@ -37,7 +37,11 @@ class FeedDataBank {
         let profilePics : [UIImage] = [UIImage(named: "blank")!, UIImage(named: "Game Dev")!, UIImage(named: "Smash Bros")!]
         
         for x in 0...99 {
-            let tweet = FeedData(handle: userHandles[Int.random(in: 0...userHandles.count - 1)], icon: profilePics[Int.random(in: 0...profilePics.count - 1)], body: bodyText, image: nil, time: x, likes: 0, retweets: 0)
+            var tweetImg : UIImage?
+            if x == 1 {
+                tweetImg = profilePics[profilePics.count - 1]
+            }
+            let tweet = FeedData(handle: userHandles[Int.random(in: 0...userHandles.count - 1)], icon: profilePics[Int.random(in: 0...profilePics.count - 1)], body: bodyText, image: tweetImg, time: x, likes: 0, retweets: 0)
             tweets.append(tweet)
         }
         
