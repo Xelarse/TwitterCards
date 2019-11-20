@@ -32,9 +32,10 @@ class CardFeedImageTableCell : UITableViewCell {
         userIcon.layer.cornerRadius = 10.0
         tweetBody.text = cellData.tweetBody
         if cellData.tweetImage != nil{
+            let oldFrame = tweetImage.frame
+            let newFrame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: oldFrame.width)
+            tweetImage.frame = newFrame
             tweetImage.image = cellData.tweetImage
-            tweetImage.contentMode = .scaleAspectFit
-            tweetImage.isHidden = false
         }
         tweetTime.text = String(cellData.tweetTime)
         tweetLikes.text = String(cellData.tweetLikes)
