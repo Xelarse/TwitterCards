@@ -18,8 +18,9 @@ class FeedData {
     var tweetTime : Int
     var tweetLikes : Int
     var tweetRetweets : Int
+    var tweetId : Int
     
-    init(handle:String, icon:UIImage, body:String, image:UIImage?, time:Int, likes:Int, retweets:Int) {
+    init(handle:String, icon:UIImage, body:String, image:UIImage?, time:Int, likes:Int, retweets:Int, id:Int) {
         userHandle = handle
         userIcon = icon
         tweetBody = body
@@ -27,6 +28,7 @@ class FeedData {
         tweetTime = time
         tweetLikes = likes
         tweetRetweets = retweets
+        tweetId = id
     }
     
     init(){
@@ -37,5 +39,6 @@ class FeedData {
         tweetTime = 0
         tweetLikes = 0
         tweetRetweets = 0
+        tweetId = 0
     }
 }

@@ -85,4 +85,11 @@ extension CardFeedViewController : FeedDataBankDelegate {
         //TODO Stop loading symbol if it gets added
         self.tableView.reloadData()
     }
+    
+    func updateCellAtIndex(index: Int) {
+        var indexPath = IndexPath(row: index, section: 0)
+        tableView.beginUpdates()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        tableView.endUpdates()
+    }
 }

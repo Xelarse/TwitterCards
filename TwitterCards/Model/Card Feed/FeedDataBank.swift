@@ -13,6 +13,7 @@ import Alamofire
 
 protocol FeedDataBankDelegate {
     func dataReady()
+    func updateCellAtIndex(index : Int)
 }
 
 class FeedDataBank {
@@ -49,7 +50,7 @@ class FeedDataBank {
             if x % 2 == 0 {
                 tweetImg = profilePics[x % profilePics.count]
             }
-            let tweet = FeedData(handle: userHandles[Int.random(in: 0...userHandles.count - 1)], icon: profilePics[Int.random(in: 0...profilePics.count - 1)], body: bodyText, image: tweetImg, time: x, likes: 0, retweets: 0)
+            let tweet = FeedData(handle: userHandles[Int.random(in: 0...userHandles.count - 1)], icon: profilePics[Int.random(in: 0...profilePics.count - 1)], body: bodyText, image: tweetImg, time: x, likes: 0, retweets: 0, id: 0)
             usersTweets.append(tweet)
         }
         
@@ -77,11 +78,12 @@ class FeedDataBank {
             TwitterApi.shared.getUserTweets(callback: { (tweetArray) in
                 for tweet in tweetArray{
                     self.usersTweets.append(self.createFeedDataFromTweet(tweet: tweet))
-                    self.pendingFetches -= 1
-                    if self.pendingFetches == 0{
-                        self.delegate.dataReady()
-                    }
                 }
+                self.pendingFetches -= 1
+                if self.pendingFetches == 0{
+                    self.delegate.dataReady()
+                }
+                
             }, screenName: handle, tweetCount: 30, includeRts: true)
         }
         
@@ -94,6 +96,7 @@ class FeedDataBank {
         newFeedData.tweetLikes = tweet.likeCount
         newFeedData.tweetRetweets = tweet.retweetCount
         newFeedData.tweetTime = 0
+        newFeedData.tweetId = tweet.tweetId
         
         if let url = URL(string: tweet.userIcon) {
             DispatchQueue.global().async {
@@ -101,11 +104,13 @@ class FeedDataBank {
                 {
                     DispatchQueue.main.async {
                         newFeedData.userIcon = UIImage( data:data)!
+                        self.pushRequestToUpdateItem(data: newFeedData)
                     }
                 }
                 else {
                     DispatchQueue.main.async {
                         newFeedData.userIcon = UIImage(named: "blank")!
+                        self.pushRequestToUpdateItem(data: newFeedData)
                     }
                 }
             }
@@ -117,12 +122,14 @@ class FeedDataBank {
                     if let data = try? Data( contentsOf:url)
                     {
                         DispatchQueue.main.async {
-                            newFeedData.userIcon = UIImage( data:data)!
+                            newFeedData.tweetImage = UIImage( data:data)!
+                            self.pushRequestToUpdateItem(data: newFeedData)
                         }
                     }
                     else {
                         DispatchQueue.main.async {
-                            newFeedData.userIcon = UIImage(named: "blank")!
+                            newFeedData.tweetImage = UIImage(named: "blank")!
+                            self.pushRequestToUpdateItem(data: newFeedData)
                         }
                     }
                 }
@@ -130,5 +137,17 @@ class FeedDataBank {
         }
         
         return newFeedData
+    }
+    
+    func pushRequestToUpdateItem(data : FeedData){
+        var cellIndex = 0
+        
+        for ind in 0...usersTweets.count - 1{
+            if usersTweets[ind].tweetId == data.tweetId{
+                cellIndex = ind
+                break
+            }
+        }
+        delegate.updateCellAtIndex(index: cellIndex)
     }
 }
