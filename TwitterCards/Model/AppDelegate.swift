@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.interactivePopGestureRecognizer?.isEnabled = false
             myTransitions = NavigationTransition(navigationController: navigationController)
         }
-        
+        TwitterApi.shared.retreiveAccessToken()
         return true
     }
 

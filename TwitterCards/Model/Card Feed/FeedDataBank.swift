@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-
+import Alamofire
 
 class FeedDataBank {
     enum InitType {
