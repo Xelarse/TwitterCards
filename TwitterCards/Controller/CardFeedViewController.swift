@@ -18,7 +18,8 @@ class CardFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        feedBank = FeedDataBank(initType: .Dummy, handles: handles)
+        feedBank = FeedDataBank(initType: .Real, handles: handles)
+        feedBank.delegate = self
         
         //Set up right swipe gesture
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightGesture(_:)))
@@ -46,11 +47,11 @@ class CardFeedViewController: UIViewController {
 //MARK: - TableView Extensions
 extension CardFeedViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feedBank.tweets.count
+        return feedBank.usersTweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellsData = feedBank.tweets[indexPath.row]
+        let cellsData = feedBank.usersTweets[indexPath.row]
         
         if cellsData.tweetImage != nil {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CardFeedImageTableCell") as! CardFeedImageTableCell
@@ -75,5 +76,13 @@ extension CardFeedViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+}
+
+//Mark: - Feed bank delegate extensions
+extension CardFeedViewController : FeedDataBankDelegate {
+    func dataReady() {
+        //TODO Stop loading symbol if it gets added
+        self.tableView.reloadData()
     }
 }

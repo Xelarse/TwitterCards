@@ -16,6 +16,7 @@
 		A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D22379E5BF0078360D /* CardCreationViewController.swift */; };
 		A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D42379E61C0078360D /* CardFeedViewController.swift */; };
 		A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635D62379E9780078360D /* ReplyFeedViewController.swift */; };
+		A64FCE8123899EB1006ACA38 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64FCE8023899EB1006ACA38 /* Tweet.swift */; };
 		A6554226237F79FC004C12C1 /* AppData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6554224237F79FC004C12C1 /* AppData.xcdatamodeld */; };
 		A676FAA3237E1B73007CBA39 /* RightsidePushPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A676FAA2237E1B73007CBA39 /* RightsidePushPop.swift */; };
 		A676FAA5237E1D19007CBA39 /* NavigationTransitionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A676FAA4237E1D19007CBA39 /* NavigationTransitionSource.swift */; };
@@ -45,6 +46,7 @@
 		A61635D22379E5BF0078360D /* CardCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCreationViewController.swift; sourceTree = "<group>"; };
 		A61635D42379E61C0078360D /* CardFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeedViewController.swift; sourceTree = "<group>"; };
 		A61635D62379E9780078360D /* ReplyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyFeedViewController.swift; sourceTree = "<group>"; };
+		A64FCE8023899EB1006ACA38 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A6554225237F79FC004C12C1 /* AppData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppData.xcdatamodel; sourceTree = "<group>"; };
 		A676FAA2237E1B73007CBA39 /* RightsidePushPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsidePushPop.swift; sourceTree = "<group>"; };
 		A676FAA4237E1D19007CBA39 /* NavigationTransitionSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTransitionSource.swift; sourceTree = "<group>"; };
@@ -122,15 +124,23 @@
 			path = "Card Feed";
 			sourceTree = "<group>";
 		};
+		A64FCE7F23899B40006ACA38 /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				A64FCE8023899EB1006ACA38 /* Tweet.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
 		A686C9222368606A0028991B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A6948AD72389989300BCE8B4 /* Twitter */,
 				A6554224237F79FC004C12C1 /* AppData.xcdatamodeld */,
 				A64FC6B02384281300C9BD7A /* Card Feed */,
 				A6FF342E237AD7780069A8AE /* Card Selection */,
 				A68C463A235B40C200BA986E /* AppDelegate.swift */,
 				A6A255DB237F6AA7001D8576 /* PersistanceService.swift */,
-				A611BE952384287900027405 /* TwitterApi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +206,15 @@
 				A67DDDB22385FBA500CA85B0 /* CardFeedImageTableCell.swift */,
 			);
 			path = "Card Feed";
+			sourceTree = "<group>";
+		};
+		A6948AD72389989300BCE8B4 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				A64FCE7F23899B40006ACA38 /* DataTypes */,
+				A611BE952384287900027405 /* TwitterApi.swift */,
+			);
+			path = Twitter;
 			sourceTree = "<group>";
 		};
 		A6FF342E237AD7780069A8AE /* Card Selection */ = {
@@ -336,6 +355,7 @@
 				A67DDDB32385FBA500CA85B0 /* CardFeedImageTableCell.swift in Sources */,
 				A61635D52379E61C0078360D /* CardFeedViewController.swift in Sources */,
 				A6A255DC237F6AA7001D8576 /* PersistanceService.swift in Sources */,
+				A64FCE8123899EB1006ACA38 /* Tweet.swift in Sources */,
 				A6949F9D237AD7F80087404C /* SelectionCarousel.swift in Sources */,
 				A61635D72379E9780078360D /* ReplyFeedViewController.swift in Sources */,
 				A68E0102238485F30077E02E /* CardFeedTableCell.swift in Sources */,
