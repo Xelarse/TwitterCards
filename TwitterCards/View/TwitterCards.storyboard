@@ -208,6 +208,7 @@ Select the "+" in the top right to get started</string>
                     </view>
                     <navigationItem key="navigationItem" id="wDk-ej-y1Q"/>
                     <connections>
+                        <outlet property="addButton" destination="Q8Z-9k-Dks" id="UH8-o4-Brg"/>
                         <outlet property="collectionView" destination="fh9-d7-npR" id="nJZ-nu-Qmf"/>
                         <outlet property="editButton" destination="aO2-81-Qzx" id="FAf-wn-9ev"/>
                         <outlet property="noCardsLabel" destination="1FG-kj-Qjj" id="UpY-7z-UJn"/>

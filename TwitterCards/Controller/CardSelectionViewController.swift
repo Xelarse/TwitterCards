@@ -65,6 +65,7 @@ class CardSelectionViewController: UIViewController {
     func toggleEditing(){
         editingMode = !editingMode
         editButton.title = editingMode ? "Done" : "Edit"
+        addButton.isEnabled = editingMode ? false : true
         collectionView.reloadData()
     }
 }
