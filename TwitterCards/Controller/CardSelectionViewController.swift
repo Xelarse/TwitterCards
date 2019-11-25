@@ -73,17 +73,7 @@ class CardSelectionViewController: UIViewController {
         }
         navigationItem.leftBarButtonItem = button
         editingMode = !editingMode
-        setCellEditingMode(isEnabled: editingMode)
-    }
-    
-    func setCellEditingMode(isEnabled : Bool){
-        let colViewCells : [CardSelectCollectionCell] = collectionView.visibleCells as! [CardSelectCollectionCell]
-        
-        if colViewCells.count > 0 {
-            for cell in colViewCells {
-                cell.setEditingLayout(isEnabled: isEnabled)
-            }
-        }
+        collectionView.reloadData()
     }
 }
 
@@ -107,6 +97,7 @@ extension CardSelectionViewController : UICollectionViewDataSource{
         
         cell.cellInfo = thisCellInfo
         cell.cellDelegate = self
+        cell.setEditingLayout(isEnabled: editingMode)
         
         return cell
     }
