@@ -12,6 +12,7 @@ import Transition
 class CardSelectionViewController: UIViewController {
     @IBOutlet weak var collectionView : UICollectionView!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var noCardsLabel: UILabel!
     
     let colCelScaleX : CGFloat = 0.8
@@ -62,17 +63,8 @@ class CardSelectionViewController: UIViewController {
     }
     
     func toggleEditing(){
-        var button : UIBarButtonItem
-        
-        if editingMode {
-            button = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: Selector(("editButtonPressed")))
-            selectionBank.saveUpdatedBank()
-        }
-        else {
-            button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: Selector(("editButtonPressed")))
-        }
-        navigationItem.leftBarButtonItem = button
         editingMode = !editingMode
+        editButton.title = editingMode ? "Done" : "Edit"
         collectionView.reloadData()
     }
 }

@@ -47,7 +47,7 @@
                                         </textAttributes>
                                         <items>
                                             <navigationItem title="TweetCards" id="0kv-G7-H4n">
-                                                <barButtonItem key="leftBarButtonItem" systemItem="edit" id="aO2-81-Qzx">
+                                                <barButtonItem key="leftBarButtonItem" title="Edit" id="aO2-81-Qzx">
                                                     <connections>
                                                         <action selector="editButtonPressed:" destination="QMW-96-XMN" id="OQS-Qs-wV2"/>
                                                     </connections>
