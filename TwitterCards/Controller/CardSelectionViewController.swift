@@ -139,6 +139,8 @@ extension CardSelectionViewController : NewCardDelegate {
         
         noCardsLabel.isHidden = true
         
+        selectionBank.saveUpdatedBank()
+        selectionBank.sortArrayByTitle()
         self.collectionView.reloadData()
     }
 }
@@ -159,6 +161,16 @@ extension CardSelectionViewController : CardSelectCollectionCellDelegate {
     }
     
     func editCellData(cellInfo: SelectionCarousel) {
-        
+        if let index = selectionBank.carouselCells.firstIndex(where: {$0.title == cellInfo.title}){
+            let existingHandles = selectionBank.carouselCells[index].handleArray
+            toggleEditing()
+            selectionBank.carouselCells.remove(at: index)
+            
+            let cardAddVC = storyboard?.instantiateViewController(withIdentifier: "CardCreationViewController") as! CardCreationViewController
+            cardAddVC.newCardDelegate = self
+            cardAddVC.handles = existingHandles
+            cardAddVC.setEditingExistingCard()
+            navigationController?.pushViewController(cardAddVC, animated: true)
+        }
     }
 }

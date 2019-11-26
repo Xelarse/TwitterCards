@@ -17,18 +17,26 @@ class CardCreationViewController: UIViewController {
     var newCardDelegate : NewCardDelegate!
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var cancelButton : UIBarButtonItem!
+    @IBOutlet weak var navBar : UINavigationItem!
     
     var handles : [String] = [String]()
-    
+    var editingExistingCard : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cancelButton.isEnabled = !editingExistingCard
+        navBar.title = editingExistingCard ? "Edit Card" : "Add Card"
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
+    func setEditingExistingCard(){
+        editingExistingCard = true
+    }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         enterCardTitleAlert()
@@ -86,7 +94,8 @@ class CardCreationViewController: UIViewController {
     }
     
     func enterCardTitleAlert(){
-        let alert = UIAlertController(title: "Enter Title", message: "Give a name to the new card", preferredStyle: .alert)
+        let alertMessage = editingExistingCard ? "Please enter a name for the card" : "Give a name to the new card"
+        let alert = UIAlertController(title: "Enter Title", message: alertMessage, preferredStyle: .alert)
         
         alert.addTextField { (field) in
             field.placeholder = "Enter title here"

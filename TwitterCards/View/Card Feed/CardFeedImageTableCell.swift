@@ -52,7 +52,7 @@ class CardFeedImageTableCell : UITableViewCell {
         
         if let month = timePeriod.month {
             if month > 0 {
-                return String(month) + "mon"
+                return String(month) + "mn"
             }
         }
         

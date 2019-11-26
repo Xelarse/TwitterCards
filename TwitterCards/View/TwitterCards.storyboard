@@ -366,6 +366,8 @@ Select the "+" in the top right to get started</string>
                         <viewLayoutGuide key="safeArea" id="ojQ-6t-yct"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="jKb-Nq-o5s" id="EPm-Ae-OTe"/>
+                        <outlet property="navBar" destination="8jT-Bc-W5R" id="fr5-jv-KBe"/>
                         <outlet property="tableView" destination="q3W-bI-ANs" id="zOX-ww-WPU"/>
                         <outlet property="textField" destination="4jM-8T-noT" id="lqT-aC-pK1"/>
                     </connections>
