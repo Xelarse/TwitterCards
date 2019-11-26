@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class CardFeedImageTableCell : UITableViewCell {
     
@@ -35,9 +36,17 @@ class CardFeedImageTableCell : UITableViewCell {
             tweetImage.image = cellData.tweetImage
             tweetImage.layer.cornerRadius = 5.0
         }
-        tweetTime.text = String(cellData.tweetTime)
+        tweetTime.text = calculateTimeFromDate(date: cellData.tweetDate)
         tweetLikes.text = String(cellData.tweetLikes)
         tweetRetweets.text = String(cellData.tweetRetweets)
+    }
+    
+    func calculateTimeFromDate(date : Date) -> String {
+        //Take the date object, compare it to the current time and get a diff to display
+        let rightNow = Date()
+        
+        
+        return ""
     }
     
 }
