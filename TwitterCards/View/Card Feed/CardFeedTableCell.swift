@@ -37,10 +37,42 @@ class CardFeedTableCell : UITableViewCell {
     
     func calculateTimeFromDate(date : Date) -> String {
         //Take the date object, compare it to the current time and get a diff to display
+        let calendar = Calendar.current
         let rightNow = Date()
         
+        let timePeriod = calendar.dateComponents([.month, .day, .hour, .minute, .second], from: cellData.tweetDate, to: rightNow)
         
-        return ""
+        if let month = timePeriod.month {
+            if month > 0 {
+                return String(month) + "mon"
+            }
+        }
+        
+        if let day = timePeriod.day {
+            if day > 0 {
+                return String(day) + "d"
+            }
+        }
+        
+        if let hour = timePeriod.hour {
+            if hour > 0 {
+                return String(hour) + "h"
+            }
+        }
+        
+        if let min = timePeriod.minute {
+            if min > 0 {
+                return String(min) + "m"
+            }
+        }
+        
+        if let sec = timePeriod.second {
+            if sec > 0 {
+                return String(sec) + "s"
+            }
+        }
+        
+        return "Date Error"
     }
     
 }
