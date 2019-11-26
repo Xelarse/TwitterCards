@@ -35,6 +35,8 @@ class CardFeedImageTableCell : UITableViewCell {
         if cellData.tweetImage != nil{
             tweetImage.image = cellData.tweetImage
             tweetImage.layer.cornerRadius = 5.0
+            tweetImage.layer.borderWidth = 0.5
+            tweetImage.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         }
         tweetTime.text = calculateTimeFromDate(date: cellData.tweetDate)
         tweetLikes.text = String(cellData.tweetLikes)
