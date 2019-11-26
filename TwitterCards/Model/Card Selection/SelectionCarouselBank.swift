@@ -33,6 +33,8 @@ class SelectionCarouselBank{
         carouselCells.append(SelectionCarousel(cellTitle: "Smash", cellBgColour: UIColor(red: 234.0/255.0, green: 110.0/255.0, blue: 110.0/255.0, alpha: 0.6), cellBgImage: UIImage(named: "Smash Bros")!, handles: ["@NairoMK", "@theSirToasty", "@Samsora_"]))
         
         carouselCells.append(SelectionCarousel(cellTitle: "Bristol Bus", cellBgColour: UIColor(red: 195.0/255.0, green: 117.0/255.0, blue: 229.0/255.0, alpha: 0.6), cellBgImage: UIImage(named: "bus")!, handles: ["@FirstBSA"]))
+        
+        sortArrayByTitle()
     }
     
     func initWithRealData(){
@@ -47,6 +49,7 @@ class SelectionCarouselBank{
             carouselCells.append(selectionCarouselItem)
         }
         
+        sortArrayByTitle()
     }
     
     func saveUpdatedBank(){
@@ -94,5 +97,9 @@ class SelectionCarouselBank{
     func stringToStringArray(string : String) -> [String] {
         let array = string.components(separatedBy: "-")
         return array
+    }
+    
+    func sortArrayByTitle(){
+        carouselCells = carouselCells.sorted {$0.title.lowercased() < $1.title.lowercased()}
     }
 }
