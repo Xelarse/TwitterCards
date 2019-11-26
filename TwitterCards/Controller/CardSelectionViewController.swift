@@ -157,4 +157,8 @@ extension CardSelectionViewController : CardSelectCollectionCellDelegate {
             }
         }
     }
+    
+    func editCellData(cellInfo: SelectionCarousel) {
+        
+    }
 }

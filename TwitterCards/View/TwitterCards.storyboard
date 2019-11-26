@@ -118,23 +118,45 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
                                                                     <color key="backgroundColor" red="0.77254901960784317" green="0.12156862745098039" blue="0.212120734881031" alpha="0.7016493055555556" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaY-Zu-6mg">
-                                                                    <rect key="frame" x="110" y="388" width="30" height="42"/>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                                                    <state key="normal" title="X">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaY-Zu-6mg" userLabel="Trash">
+                                                                    <rect key="frame" x="100" y="385" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="jaY-Zu-6mg" secondAttribute="height" multiplier="1:1" id="5Nb-io-3bW"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" image="bin">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="titleShadowColor" red="0.1140504405" green="0.63152408599999998" blue="0.95026165250000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="deleteButtonPressed:" destination="rX9-p3-Dqk" eventType="touchUpInside" id="iMn-av-OHu"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je5-TB-EUF" userLabel="Edit">
+                                                                    <rect key="frame" x="100" y="15" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="je5-TB-EUF" secondAttribute="height" multiplier="1:1" id="Utp-dF-qQL"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" image="pencil">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="titleShadowColor" red="0.1140504405" green="0.63152408599999998" blue="0.95026165250000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="editButtonPressed:" destination="rX9-p3-Dqk" eventType="touchUpInside" id="Gba-he-gXP"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Fk1-eX-5W0" secondAttribute="trailing" id="2ff-cY-Opa"/>
                                                                 <constraint firstItem="jaY-Zu-6mg" firstAttribute="centerX" secondItem="Xxc-hZ-ukq" secondAttribute="centerX" id="4f0-bp-Edh"/>
-                                                                <constraint firstAttribute="bottom" secondItem="jaY-Zu-6mg" secondAttribute="bottom" constant="20" id="aZG-an-CT5"/>
+                                                                <constraint firstItem="je5-TB-EUF" firstAttribute="centerX" secondItem="Xxc-hZ-ukq" secondAttribute="centerX" id="AXN-kM-VYZ"/>
+                                                                <constraint firstItem="jaY-Zu-6mg" firstAttribute="width" secondItem="Xxc-hZ-ukq" secondAttribute="width" multiplier="0.2" id="PO5-Ls-E0A"/>
+                                                                <constraint firstItem="je5-TB-EUF" firstAttribute="top" secondItem="Xxc-hZ-ukq" secondAttribute="top" constant="15" id="WrV-Fz-oVK"/>
+                                                                <constraint firstAttribute="bottom" secondItem="jaY-Zu-6mg" secondAttribute="bottom" constant="15" id="aZG-an-CT5"/>
                                                                 <constraint firstItem="Fk1-eX-5W0" firstAttribute="top" secondItem="Xxc-hZ-ukq" secondAttribute="top" id="dS3-yh-8YH"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Fk1-eX-5W0" secondAttribute="bottom" id="fh8-69-2Hx"/>
+                                                                <constraint firstItem="je5-TB-EUF" firstAttribute="width" secondItem="Xxc-hZ-ukq" secondAttribute="width" multiplier="0.2" id="oeU-Tk-rbp"/>
                                                                 <constraint firstItem="Fk1-eX-5W0" firstAttribute="leading" secondItem="Xxc-hZ-ukq" secondAttribute="leading" id="thH-M3-0gq"/>
                                                             </constraints>
                                                         </view>
@@ -704,8 +726,10 @@ Select the "+" in the top right to get started</string>
         </scene>
     </scenes>
     <resources>
+        <image name="bin" width="128" height="128"/>
         <image name="bus" width="657" height="975"/>
         <image name="heartBlue" width="128" height="128"/>
+        <image name="pencil" width="128" height="128"/>
         <image name="retweetBlue" width="100" height="100"/>
     </resources>
 </document>

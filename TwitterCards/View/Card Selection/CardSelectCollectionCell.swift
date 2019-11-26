@@ -10,6 +10,7 @@ import UIKit
 
 protocol CardSelectCollectionCellDelegate {
     func removeCell(cellInfo: SelectionCarousel)
+    func editCellData(cellInfo : SelectionCarousel)
 }
 
 class CardSelectCollectionCell : UICollectionViewCell{
@@ -54,6 +55,10 @@ class CardSelectCollectionCell : UICollectionViewCell{
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
         cellDelegate.removeCell(cellInfo: cellInfo)
+    }
+    
+    @IBAction func editButtonPressed(_ sender: Any) {
+        cellDelegate.editCellData(cellInfo: cellInfo)
     }
     
     
