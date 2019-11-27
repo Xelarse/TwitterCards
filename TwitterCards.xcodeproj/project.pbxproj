@@ -27,6 +27,10 @@
 		A68E0102238485F30077E02E /* CardFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E0101238485F30077E02E /* CardFeedTableCell.swift */; };
 		A6949F9D237AD7F80087404C /* SelectionCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6949F9C237AD7F80087404C /* SelectionCarousel.swift */; };
 		A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */; };
+		A69FF500238DEADC00B7A01C /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FF4FF238DEADC00B7A01C /* TweetCell.swift */; };
+		A69FF502238DEAEA00B7A01C /* TweetImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FF501238DEAEA00B7A01C /* TweetImageCell.swift */; };
+		A69FF505238DED2E00B7A01C /* ReplyFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FF504238DED2E00B7A01C /* ReplyFeedTableCell.swift */; };
+		A69FF507238DED4200B7A01C /* ReplyFeedImageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FF506238DED4200B7A01C /* ReplyFeedImageTableCell.swift */; };
 		A6A255D7237F6511001D8576 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A255D6237F6511001D8576 /* CoreData.framework */; };
 		A6A255DC237F6AA7001D8576 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A255DB237F6AA7001D8576 /* PersistanceService.swift */; };
 		A6BFDBAA238060710057B196 /* SelectionCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFDBA8238060710057B196 /* SelectionCard+CoreDataClass.swift */; };
@@ -59,6 +63,10 @@
 		A68E0101238485F30077E02E /* CardFeedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeedTableCell.swift; sourceTree = "<group>"; };
 		A6949F9C237AD7F80087404C /* SelectionCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCarousel.swift; sourceTree = "<group>"; };
 		A6949F9E237ADA6D0087404C /* SelectionCarouselBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCarouselBank.swift; sourceTree = "<group>"; };
+		A69FF4FF238DEADC00B7A01C /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		A69FF501238DEAEA00B7A01C /* TweetImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetImageCell.swift; sourceTree = "<group>"; };
+		A69FF504238DED2E00B7A01C /* ReplyFeedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyFeedTableCell.swift; sourceTree = "<group>"; };
+		A69FF506238DED4200B7A01C /* ReplyFeedImageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyFeedImageTableCell.swift; sourceTree = "<group>"; };
 		A6A255D6237F6511001D8576 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A6A255DB237F6AA7001D8576 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		A6BFDBA8238060710057B196 /* SelectionCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionCard+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -148,6 +156,8 @@
 		A686C923236860730028991B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A69FF503238DECFB00B7A01C /* Reply Feed */,
+				A69FF4FE238DEAAD00B7A01C /* Tweet Cells */,
 				A68E0100238485DC0077E02E /* Card Feed */,
 				A601EB2B2380B75600F29D6E /* Card Creation */,
 				A61635DA237A1B490078360D /* Card Selection */,
@@ -215,6 +225,24 @@
 				A611BE952384287900027405 /* TwitterApi.swift */,
 			);
 			path = Twitter;
+			sourceTree = "<group>";
+		};
+		A69FF4FE238DEAAD00B7A01C /* Tweet Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A69FF4FF238DEADC00B7A01C /* TweetCell.swift */,
+				A69FF501238DEAEA00B7A01C /* TweetImageCell.swift */,
+			);
+			path = "Tweet Cells";
+			sourceTree = "<group>";
+		};
+		A69FF503238DECFB00B7A01C /* Reply Feed */ = {
+			isa = PBXGroup;
+			children = (
+				A69FF504238DED2E00B7A01C /* ReplyFeedTableCell.swift */,
+				A69FF506238DED4200B7A01C /* ReplyFeedImageTableCell.swift */,
+			);
+			path = "Reply Feed";
 			sourceTree = "<group>";
 		};
 		A6FF342E237AD7780069A8AE /* Card Selection */ = {
@@ -361,15 +389,19 @@
 				A68E0102238485F30077E02E /* CardFeedTableCell.swift in Sources */,
 				A68C463B235B40C200BA986E /* AppDelegate.swift in Sources */,
 				A676FAA5237E1D19007CBA39 /* NavigationTransitionSource.swift in Sources */,
+				A69FF502238DEAEA00B7A01C /* TweetImageCell.swift in Sources */,
 				A6FF342D237A21F20069A8AE /* CardSelectCollectionCell.swift in Sources */,
 				A61635D32379E5BF0078360D /* CardCreationViewController.swift in Sources */,
 				A611BE962384287900027405 /* TwitterApi.swift in Sources */,
 				A6949F9F237ADA6D0087404C /* SelectionCarouselBank.swift in Sources */,
 				A6BFDBAA238060710057B196 /* SelectionCard+CoreDataClass.swift in Sources */,
 				A611BE982384296A00027405 /* FeedData.swift in Sources */,
+				A69FF500238DEADC00B7A01C /* TweetCell.swift in Sources */,
 				A61635D12379E5A20078360D /* CardSelectionViewController.swift in Sources */,
 				A676FAA3237E1B73007CBA39 /* RightsidePushPop.swift in Sources */,
+				A69FF505238DED2E00B7A01C /* ReplyFeedTableCell.swift in Sources */,
 				A6BFDBAB238060710057B196 /* SelectionCard+CoreDataProperties.swift in Sources */,
+				A69FF507238DED4200B7A01C /* ReplyFeedImageTableCell.swift in Sources */,
 				A611BE9A2384297500027405 /* FeedDataBank.swift in Sources */,
 				A6D76B552380B89F006B6A33 /* CardCreationTableCell.swift in Sources */,
 				A6554226237F79FC004C12C1 /* AppData.xcdatamodeld in Sources */,
