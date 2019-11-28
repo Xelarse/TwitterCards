@@ -56,13 +56,13 @@ extension ReplyFeedViewController : UITableViewDataSource, UITableViewDelegate{
         let cellsData = feedBank.usersTweets[indexPath.row]
         
         if cellsData.tweetImage != nil {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CardFeedImageTableCell") as! CardFeedImageTableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyFeedReplyImageCell") as! ReplyFeedImageTableCell
             cell.cellData = cellsData
             return cell
         }
             
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CardFeedTableCell") as! CardFeedTableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyFeedReplyCell") as! ReplyFeedTableCell
             cell.cellData = cellsData
             return cell
         }

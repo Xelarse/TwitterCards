@@ -860,6 +860,14 @@ Select the "+" in the top right to get started</string>
                                                 <constraint firstItem="B2w-Rt-Ps0" firstAttribute="leading" secondItem="JIg-WK-Vot" secondAttribute="leading" id="lly-kD-8Bf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tweetBody" destination="fQH-pW-OZu" id="9Sm-nv-FT4"/>
+                                            <outlet property="tweetLikes" destination="ScT-by-ogn" id="zla-aw-zga"/>
+                                            <outlet property="tweetRetweets" destination="yV9-BW-BYJ" id="VsX-vH-Abf"/>
+                                            <outlet property="tweetTime" destination="v18-pP-WT4" id="Ah4-7B-zMw"/>
+                                            <outlet property="userHandle" destination="5JB-Mv-uwU" id="Qns-Oc-Nty"/>
+                                            <outlet property="userIcon" destination="tPi-gl-EoY" id="3xU-i5-3Dx"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ReplyFeedRootImageCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReplyFeedRootImageCell" rowHeight="350" id="0eb-Jk-prw" userLabel="RootImageCell" customClass="ReplyFeedImageTableCell" customModule="TwitterCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="375" height="350"/>
@@ -1008,6 +1016,15 @@ Select the "+" in the top right to get started</string>
                                                 <constraint firstAttribute="trailing" secondItem="g6u-4a-uXq" secondAttribute="trailing" id="zUj-tI-gYd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tweetBody" destination="Ort-mB-Lg5" id="8Qr-NT-Sjs"/>
+                                            <outlet property="tweetImage" destination="smH-mn-kao" id="eZU-Kk-SRv"/>
+                                            <outlet property="tweetLikes" destination="zcb-VY-b6Q" id="NK4-5j-ScG"/>
+                                            <outlet property="tweetRetweets" destination="mNn-0l-A5P" id="HRz-F2-fZ7"/>
+                                            <outlet property="tweetTime" destination="gdn-3m-sLc" id="n8E-aG-h8T"/>
+                                            <outlet property="userHandle" destination="ImW-Ba-NIL" id="Eqq-ah-PC6"/>
+                                            <outlet property="userIcon" destination="UqE-NT-3dp" id="urX-PY-1vA"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ReplyFeedReplyCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReplyFeedReplyCell" rowHeight="150" id="ESM-50-crg" userLabel="ReplyCell" customClass="ReplyFeedTableCell" customModule="TwitterCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="528" width="375" height="150"/>
@@ -1133,7 +1150,7 @@ Select the "+" in the top right to get started</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.88235294119999996" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="9J5-nU-BEU" secondAttribute="trailing" id="2CR-un-THx"/>
                                                 <constraint firstItem="OgB-dT-Ru5" firstAttribute="top" secondItem="hKH-n8-aad" secondAttribute="bottom" id="3bx-7H-Ed8"/>
@@ -1147,6 +1164,14 @@ Select the "+" in the top right to get started</string>
                                                 <constraint firstItem="9J5-nU-BEU" firstAttribute="leading" secondItem="JuL-ri-3gJ" secondAttribute="leading" id="fEq-zj-1Rv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tweetBody" destination="BAT-fF-8IG" id="Xcg-5A-gsG"/>
+                                            <outlet property="tweetLikes" destination="svV-2y-FsF" id="sNJ-cu-Ozm"/>
+                                            <outlet property="tweetRetweets" destination="SGg-1Y-dqA" id="Vdv-nV-12d"/>
+                                            <outlet property="tweetTime" destination="lIU-o1-9E1" id="IXf-tv-Qw5"/>
+                                            <outlet property="userHandle" destination="aXU-fI-3OK" id="vHJ-L4-1bX"/>
+                                            <outlet property="userIcon" destination="Bfs-lW-duN" id="UWa-ad-6gW"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ReplyFeedReplyImageCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReplyFeedReplyImageCell" rowHeight="350" id="AsL-VK-nC8" userLabel="ReplyImageCell" customClass="ReplyFeedImageTableCell" customModule="TwitterCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="678" width="375" height="350"/>
@@ -1281,7 +1306,7 @@ Select the "+" in the top right to get started</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.88235294119999996" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="5Rr-9Q-QaV" firstAttribute="leading" secondItem="CDN-st-6o5" secondAttribute="leading" id="BIZ-jC-OTh"/>
                                                 <constraint firstItem="Kq0-W9-JB6" firstAttribute="top" secondItem="CDN-st-6o5" secondAttribute="top" id="BaR-PD-KGb"/>
@@ -1295,6 +1320,15 @@ Select the "+" in the top right to get started</string>
                                                 <constraint firstItem="5Rr-9Q-QaV" firstAttribute="top" secondItem="Kq0-W9-JB6" secondAttribute="bottom" id="xcW-bi-rNl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tweetBody" destination="Pki-7z-DRv" id="5rZ-0Y-fte"/>
+                                            <outlet property="tweetImage" destination="RqK-tc-A9O" id="i3e-Sp-N8U"/>
+                                            <outlet property="tweetLikes" destination="Gd8-oM-myy" id="Rur-fL-lmo"/>
+                                            <outlet property="tweetRetweets" destination="r44-ck-Iil" id="VvG-Bu-kBb"/>
+                                            <outlet property="tweetTime" destination="28h-DP-IsA" id="gzI-4x-ndt"/>
+                                            <outlet property="userHandle" destination="RFq-7P-cEW" id="thm-uw-PTh"/>
+                                            <outlet property="userIcon" destination="Zbd-at-eNB" id="yVN-Si-Mfs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

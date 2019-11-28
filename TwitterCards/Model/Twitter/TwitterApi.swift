@@ -158,7 +158,8 @@ class TwitterApi {
                 tweet.likeCount = tweetJson["favorite_count"].int ?? tweet.likeCount
                 tweet.retweetCount = tweetJson["retweet_count"].int ?? tweet.retweetCount
                 tweet.userIcon = tweetJson["user"]["profile_image_url_https"].string ?? tweet.userIcon
-                tweet.userHandle = tweetJson["user"]["name"].string ?? tweet.userHandle
+                tweet.userName = tweetJson["user"]["name"].string ?? tweet.userName
+                tweet.userHandle = tweetJson["user"]["screen_name"].string ?? tweet.userHandle
                 tweets.append(tweet)
             }
             

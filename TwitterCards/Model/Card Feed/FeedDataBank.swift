@@ -89,7 +89,7 @@ class FeedDataBank {
                     self.delegate.dataReady()
                 }
                 
-            }, screenName: handle, tweetCount: 50, includeRts: false)
+            }, screenName: handle, tweetCount: 150, includeRts: true)
         }
         
     }
