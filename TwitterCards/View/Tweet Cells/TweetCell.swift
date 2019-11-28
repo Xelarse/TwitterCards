@@ -26,7 +26,7 @@ class TweetCell : UITableViewCell {
     }
     
     func updateCell() {
-        userHandle.text = cellData.userHandle
+        userHandle.text = cellData.userName
         userIcon.image = cellData.userIcon
         userIcon.contentMode = .scaleAspectFill
         userIcon.layer.cornerRadius = 10.0

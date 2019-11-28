@@ -11,11 +11,12 @@ import Foundation
 
 class Tweet {
     var createdAt : String = ""
-    var tweetId : Int = -1
+    var tweetId : String = ""
     var tweetText : String = ""
     var retweetCount : Int = -1
     var likeCount : Int = -1
     var thumbnailUrl : String = ""
+    var userName : String = ""
     var userHandle : String = ""
     var userIcon : String = ""
 }

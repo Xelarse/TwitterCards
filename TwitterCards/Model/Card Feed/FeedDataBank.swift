@@ -41,6 +41,10 @@ class FeedDataBank {
         }
     }
     
+    init(userHandle:String, tweetId:String){
+        initReplyData(userHandle: userHandle, tweetId: tweetId)
+    }
+    
     func initDummyData(){
         let bodyText : String = "Lorem ipsum dolor sit amet consectetur adipiscing elit viverra egestas fermentum nascetur maecenas duis condimentum volutpat nulla metus augue, ad fusce feugiat non placerat consequat lectus ligula nullam cras scelerisque eget sollicitudin id risus class. Imperdiet quis nascetur."
         let profilePics : [UIImage] = [UIImage(named: "bus")!, UIImage(named: "Game Dev")!, UIImage(named: "Smash Bros")!]
@@ -50,7 +54,7 @@ class FeedDataBank {
             if x % 2 == 0 {
                 tweetImg = profilePics[x % profilePics.count]
             }
-            let tweet = FeedData(handle: userHandles[Int.random(in: 0...userHandles.count - 1)], icon: profilePics[Int.random(in: 0...profilePics.count - 1)], body: bodyText, image: tweetImg, likes: 0, retweets: 0, id: 0, date: Date())
+            let tweet = FeedData(handle: userHandles[Int.random(in: 0...userHandles.count - 1)], icon: profilePics[Int.random(in: 0...profilePics.count - 1)], body: bodyText, image: tweetImg, likes: 0, retweets: 0, id: "", date: Date(), name: "")
             usersTweets.append(tweet)
         }
         
@@ -85,13 +89,30 @@ class FeedDataBank {
                     self.delegate.dataReady()
                 }
                 
-            }, screenName: handle, tweetCount: 50, includeRts: true)
+            }, screenName: handle, tweetCount: 50, includeRts: false)
         }
         
     }
     
+    func initReplyData(userHandle : String, tweetId : String){
+        //Sanitise user handle for rest call
+        var newHandle = userHandle
+        if let index = newHandle.firstIndex(of: "@"){
+            newHandle.remove(at: index)
+        }
+        
+        TwitterApi.shared.getReplyTweets(callback: { (tweetArray) in
+            for tweet in tweetArray{
+                self.usersTweets.append(self.createFeedDataFromTweet(tweet: tweet))
+            }
+            self.sortFeedByDateDecending()
+            self.delegate.dataReady()
+        }, screenName: newHandle, tweetId: tweetId)
+    }
+    
     func createFeedDataFromTweet(tweet : Tweet) -> FeedData {
         let newFeedData = FeedData()
+        newFeedData.userName = tweet.userName
         newFeedData.userHandle = tweet.userHandle
         newFeedData.tweetBody = tweet.tweetText
         newFeedData.tweetLikes = tweet.likeCount

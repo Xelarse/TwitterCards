@@ -12,15 +12,16 @@ import Foundation
 
 class FeedData {
     var userHandle : String
+    var userName : String
     var userIcon : UIImage
     var tweetBody : String
     var tweetImage : UIImage?
     var tweetDate : Date
     var tweetLikes : Int
     var tweetRetweets : Int
-    var tweetId : Int
+    var tweetId : String
     
-    init(handle:String, icon:UIImage, body:String, image:UIImage?, likes:Int, retweets:Int, id:Int, date: Date) {
+    init(handle:String, icon:UIImage, body:String, image:UIImage?, likes:Int, retweets:Int, id:String, date: Date, name:String) {
         userHandle = handle
         userIcon = icon
         tweetBody = body
@@ -29,6 +30,7 @@ class FeedData {
         tweetRetweets = retweets
         tweetId = id
         tweetDate = date
+        userName = name
     }
     
     init(){
@@ -38,7 +40,8 @@ class FeedData {
         tweetImage = nil
         tweetLikes = 0
         tweetRetweets = 0
-        tweetId = 0
+        tweetId = ""
         tweetDate = Date()
+        userName = ""
     }
 }

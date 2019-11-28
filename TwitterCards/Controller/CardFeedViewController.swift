@@ -65,6 +65,13 @@ extension CardFeedViewController : UITableViewDataSource, UITableViewDelegate{
             return cell
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellsData = feedBank.usersTweets[indexPath.row]
+        
+        let replyFeedVC = storyboard?.instantiateViewController(withIdentifier: "ReplyFeedViewController") as! ReplyFeedViewController
+        replyFeedVC.initialiseRootId(id: cellsData.tweetId, handle: cellsData.userHandle)
+        navigationController?.pushViewController(replyFeedVC, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return false
@@ -87,7 +94,7 @@ extension CardFeedViewController : FeedDataBankDelegate {
     }
     
     func updateCellAtIndex(index: Int) {
-        var indexPath = IndexPath(row: index, section: 0)
+        let indexPath = IndexPath(row: index, section: 0)
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()

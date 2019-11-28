@@ -714,7 +714,7 @@ Select the "+" in the top right to get started</string>
         <!--Reply Feed-->
         <scene sceneID="CEC-aB-Fcx">
             <objects>
-                <viewController title="Reply Feed" id="h1c-WH-i46" customClass="ReplyFeedViewController" customModule="TwitterCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReplyFeedViewController" title="Reply Feed" id="h1c-WH-i46" customClass="ReplyFeedViewController" customModule="TwitterCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KtS-D1-DsU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1308,6 +1308,9 @@ Select the "+" in the top right to get started</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UQr-WM-akx"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Emd-wf-tTx" id="vS9-ky-fp7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7z-Py-3D7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
