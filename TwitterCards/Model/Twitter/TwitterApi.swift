@@ -91,14 +91,14 @@ class TwitterApi {
             return
         }
         
-        let requestUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+        let requestUrl = "https://api.twitter.com/1.1/search/tweets.json"
         let requestHeader = [
             "Authorization" : "Bearer " + self.apiAccessToken
         ]
         let requestParameters = [
-            "screen_name" : screenName,
-            "count" : String(3000),
-            "include_rts" : "false",
+            "q" : String(screenName.utf8),
+            "since_id" : tweetId,
+            "count" : "100"
         ]
         
         AF.request(requestUrl, method: .get, parameters: requestParameters, encoder: URLEncodedFormParameterEncoder.default, headers: HTTPHeaders(requestHeader)).validate().responseJSON { (response) in
@@ -140,26 +140,28 @@ class TwitterApi {
         var tweets = [Tweet]()
         var replyJsons = [JSON]()
         
-        //First loop over the response and add any that are replies to the replyJsons array
-        for(index, subJson):(String, JSON) in tweetJson {
-            if let id = subJson["in_reply_to_status_id_str"].string {
-                if id == idString {
-                    replyJsons.append(subJson)
+        if let searchResults = tweetJson.dictionary?["statuses"] {
+            for(index, subJson):(String, JSON) in searchResults{
+                if let id = subJson["in_reply_to_status_id_str"].string {
+                    if id == idString {
+                        replyJsons.append(subJson)
+                    }
                 }
             }
-        }
-        
-        for tweetJson in replyJsons {
-            let tweet = Tweet()
-            tweet.createdAt = tweetJson["created_at"].string ?? tweet.createdAt
-            tweet.tweetId = tweetJson["id_str"].string ?? tweet.tweetId
-            tweet.tweetText = tweetJson["text"].string ?? tweet.tweetText
-            tweet.thumbnailUrl = tweetJson["entities"]["media"][0]["media_url_https"].string ?? tweet.thumbnailUrl
-            tweet.likeCount = tweetJson["favorite_count"].int ?? tweet.likeCount
-            tweet.retweetCount = tweetJson["retweet_count"].int ?? tweet.retweetCount
-            tweet.userIcon = tweetJson["user"]["profile_image_url_https"].string ?? tweet.userIcon
-            tweet.userHandle = tweetJson["user"]["name"].string ?? tweet.userHandle
-            tweets.append(tweet)
+            
+            for tweetJson in replyJsons {
+                let tweet = Tweet()
+                tweet.createdAt = tweetJson["created_at"].string ?? tweet.createdAt
+                tweet.tweetId = tweetJson["id_str"].string ?? tweet.tweetId
+                tweet.tweetText = tweetJson["text"].string ?? tweet.tweetText
+                tweet.thumbnailUrl = tweetJson["entities"]["media"][0]["media_url_https"].string ?? tweet.thumbnailUrl
+                tweet.likeCount = tweetJson["favorite_count"].int ?? tweet.likeCount
+                tweet.retweetCount = tweetJson["retweet_count"].int ?? tweet.retweetCount
+                tweet.userIcon = tweetJson["user"]["profile_image_url_https"].string ?? tweet.userIcon
+                tweet.userHandle = tweetJson["user"]["name"].string ?? tweet.userHandle
+                tweets.append(tweet)
+            }
+            
         }
         
         return tweets
