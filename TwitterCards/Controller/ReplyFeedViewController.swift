@@ -13,12 +13,11 @@ class ReplyFeedViewController: UIViewController {
     @IBOutlet weak var tableView : UITableView!
     
     var feedBank : FeedDataBank!
-    var rootTweetId : String = ""
-    var userHandle : String = ""
+    var feedRootTweet : FeedData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        feedBank = FeedDataBank(userHandle: userHandle, tweetId: rootTweetId)
+        feedBank = FeedDataBank(rootTweet: feedRootTweet)
         feedBank.delegate = self
         
         //Set up right swipe gesture
@@ -33,9 +32,8 @@ class ReplyFeedViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension;
     }
 
-    func initialiseRootId(id : String, handle : String){
-        rootTweetId = id
-        userHandle = handle
+    func initialiseRootTweet(rootTweet : FeedData){
+        feedRootTweet = rootTweet
     }
     
     @objc func swipeRightGesture(_ sender:UISwipeGestureRecognizer){
@@ -54,15 +52,18 @@ extension ReplyFeedViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellsData = feedBank.usersTweets[indexPath.row]
+        var identifier : String = ""
         
         if cellsData.tweetImage != nil {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyFeedReplyImageCell") as! ReplyFeedImageTableCell
+            identifier = indexPath.row == 0 ? "ReplyFeedRootImageCell" : "ReplyFeedReplyImageCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ReplyFeedImageTableCell
             cell.cellData = cellsData
             return cell
         }
             
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyFeedReplyCell") as! ReplyFeedTableCell
+            identifier = indexPath.row == 0 ? "ReplyFeedRootCell" : "ReplyFeedReplyCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ReplyFeedTableCell
             cell.cellData = cellsData
             return cell
         }

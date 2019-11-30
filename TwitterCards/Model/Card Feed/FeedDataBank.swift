@@ -41,8 +41,9 @@ class FeedDataBank {
         }
     }
     
-    init(userHandle:String, tweetId:String){
-        initReplyData(userHandle: userHandle, tweetId: tweetId)
+    init(rootTweet : FeedData){
+        usersTweets.append(rootTweet)
+        initReplyData(userHandle: rootTweet.userHandle, tweetId: rootTweet.tweetId)
     }
     
     func initDummyData(){
@@ -105,7 +106,7 @@ class FeedDataBank {
             for tweet in tweetArray{
                 self.usersTweets.append(self.createFeedDataFromTweet(tweet: tweet))
             }
-            self.sortFeedByDateDecending()
+            self.sortFeedByDataAcending()
             self.delegate.dataReady()
         }, screenName: newHandle, tweetId: tweetId)
     }
@@ -245,5 +246,9 @@ class FeedDataBank {
     
     func sortFeedByDateDecending() {
         usersTweets = usersTweets.sorted(by: {$0.tweetDate.compare($1.tweetDate) == .orderedDescending})
+    }
+    
+    func sortFeedByDataAcending() {
+        usersTweets = usersTweets.sorted(by: {$0.tweetDate.compare($1.tweetDate) == .orderedAscending})
     }
 }

@@ -69,7 +69,7 @@ extension CardFeedViewController : UITableViewDataSource, UITableViewDelegate{
         let cellsData = feedBank.usersTweets[indexPath.row]
         
         let replyFeedVC = storyboard?.instantiateViewController(withIdentifier: "ReplyFeedViewController") as! ReplyFeedViewController
-        replyFeedVC.initialiseRootId(id: cellsData.tweetId, handle: cellsData.userHandle)
+        replyFeedVC.initialiseRootTweet(rootTweet: cellsData)
         navigationController?.pushViewController(replyFeedVC, animated: true)
     }
     
