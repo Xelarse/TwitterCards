@@ -847,6 +847,7 @@ Select the "+" in the top right to get started</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="GS4-XV-Yz0" firstAttribute="top" secondItem="JIg-WK-Vot" secondAttribute="top" id="4ae-Fn-YCH"/>
                                                 <constraint firstItem="GS4-XV-Yz0" firstAttribute="leading" secondItem="JIg-WK-Vot" secondAttribute="leading" id="BRf-HS-Qhz"/>
@@ -1003,6 +1004,7 @@ Select the "+" in the top right to get started</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="C3K-n7-LBF" firstAttribute="top" secondItem="6SK-zU-wg4" secondAttribute="bottom" id="1Cc-3i-yyv"/>
                                                 <constraint firstItem="C3K-n7-LBF" firstAttribute="leading" secondItem="q8z-vR-Uiu" secondAttribute="leading" id="34l-bG-rF1"/>
@@ -1190,7 +1192,7 @@ Select the "+" in the top right to get started</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.88235294119999996" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="9J5-nU-BEU" secondAttribute="trailing" id="2CR-un-THx"/>
                                                 <constraint firstItem="OgB-dT-Ru5" firstAttribute="top" secondItem="hKH-n8-aad" secondAttribute="bottom" id="3bx-7H-Ed8"/>
@@ -1205,6 +1207,10 @@ Select the "+" in the top right to get started</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bottomViewBlueLine" destination="W17-og-aZB" id="u0v-ty-EuN"/>
+                                            <outlet property="centerViewBlueLine" destination="417-AI-iXH" id="66f-HP-p5B"/>
+                                            <outlet property="topViewLowerBlueLine" destination="77Z-ed-9b8" id="JSM-Bi-uMJ"/>
+                                            <outlet property="topViewUpperBlueLine" destination="RF1-Nd-nQ0" id="m1a-MR-Zka"/>
                                             <outlet property="tweetBody" destination="BAT-fF-8IG" id="Xcg-5A-gsG"/>
                                             <outlet property="tweetLikes" destination="svV-2y-FsF" id="sNJ-cu-Ozm"/>
                                             <outlet property="tweetRetweets" destination="SGg-1Y-dqA" id="Vdv-nV-12d"/>
@@ -1386,7 +1392,7 @@ Select the "+" in the top right to get started</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.88235294119999996" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="5Rr-9Q-QaV" firstAttribute="leading" secondItem="CDN-st-6o5" secondAttribute="leading" id="BIZ-jC-OTh"/>
                                                 <constraint firstItem="Kq0-W9-JB6" firstAttribute="top" secondItem="CDN-st-6o5" secondAttribute="top" id="BaR-PD-KGb"/>
@@ -1401,6 +1407,10 @@ Select the "+" in the top right to get started</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bottomViewBlueLine" destination="RdM-v3-3yg" id="orA-cd-xxf"/>
+                                            <outlet property="centerViewBlueLine" destination="tWu-n3-TaS" id="4nx-YH-ZtN"/>
+                                            <outlet property="topViewLowerBlueLine" destination="4gE-KD-OPJ" id="bDu-yh-LDE"/>
+                                            <outlet property="topViewUpperBlueLine" destination="GEP-Z9-WoM" id="xD4-5Z-Muf"/>
                                             <outlet property="tweetBody" destination="Pki-7z-DRv" id="5rZ-0Y-fte"/>
                                             <outlet property="tweetImage" destination="RqK-tc-A9O" id="i3e-Sp-N8U"/>
                                             <outlet property="tweetLikes" destination="Gd8-oM-myy" id="Rur-fL-lmo"/>

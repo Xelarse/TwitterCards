@@ -58,6 +58,7 @@ extension ReplyFeedViewController : UITableViewDataSource, UITableViewDelegate{
             identifier = indexPath.row == 0 ? "ReplyFeedRootImageCell" : "ReplyFeedReplyImageCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ReplyFeedImageTableCell
             cell.cellData = cellsData
+            cell.setTailBlueLineActive(isActive: indexPath.row != feedBank.usersTweets.count - 1)
             return cell
         }
             
@@ -65,6 +66,7 @@ extension ReplyFeedViewController : UITableViewDataSource, UITableViewDelegate{
             identifier = indexPath.row == 0 ? "ReplyFeedRootCell" : "ReplyFeedReplyCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ReplyFeedTableCell
             cell.cellData = cellsData
+            cell.setTailBlueLineActive(isActive: indexPath.row != feedBank.usersTweets.count - 1)
             return cell
         }
     }
