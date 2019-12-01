@@ -11,6 +11,7 @@ import UIKit
 class ReplyFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var noReplyLabel : UILabel!
     
     var feedBank : FeedDataBank!
     var feedRootTweet : FeedData!
@@ -88,7 +89,12 @@ extension ReplyFeedViewController : UITableViewDataSource, UITableViewDelegate{
 extension ReplyFeedViewController : FeedDataBankDelegate {
     func dataReady() {
         //TODO Stop loading symbol if it gets added
-        self.tableView.reloadData()
+        
+        if feedBank.usersTweets.count > 1 {
+            self.tableView.isHidden = false
+            self.noReplyLabel.isHidden = true
+            self.tableView.reloadData()
+        }
     }
     
     func updateCellAtIndex(index: Int) {

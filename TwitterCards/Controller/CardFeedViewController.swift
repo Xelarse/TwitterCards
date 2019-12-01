@@ -12,6 +12,7 @@ import Transition
 class CardFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var noTweetsLabel : UILabel!
     
     var feedBank : FeedDataBank!
     var handles : [String] = []
@@ -90,7 +91,14 @@ extension CardFeedViewController : UITableViewDataSource, UITableViewDelegate{
 extension CardFeedViewController : FeedDataBankDelegate {
     func dataReady() {
         //TODO Stop loading symbol if it gets added
-        self.tableView.reloadData()
+        
+        if feedBank.usersTweets.count == 0 {
+            self.noTweetsLabel.isHidden = false
+            self.tableView.isHidden = true
+        }
+        else{
+            self.tableView.reloadData()
+        }
     }
     
     func updateCellAtIndex(index: Int) {
