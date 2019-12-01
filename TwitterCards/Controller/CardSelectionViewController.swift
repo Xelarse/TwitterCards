@@ -16,7 +16,7 @@ class CardSelectionViewController: UIViewController {
     @IBOutlet weak var noCardsLabel: UILabel!
     
     let colCelScaleX : CGFloat = 0.8
-    let colCelScaleY : CGFloat = 1
+    let colCelScaleY : CGFloat = 0.8
     
     var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Real)
     
@@ -26,7 +26,7 @@ class CardSelectionViewController: UIViewController {
         super.viewDidLoad()
         
         //CollectionViewSetup
-        let colViewSize = collectionView.bounds.size
+        let colViewSize = view.bounds.size
         let colCelWidth = floor(colViewSize.width * colCelScaleX)
         let colCelHeight = floor(colViewSize.height * colCelScaleY)
         let colCelInsetX = (colViewSize.width - colCelWidth) / 2.0
