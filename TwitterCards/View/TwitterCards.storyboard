@@ -406,8 +406,8 @@ Select the "+" in the top right to get started</string>
                                                                 <constraint firstAttribute="height" constant="37" id="yZn-xH-XA9"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-pY-Pm4">
-                                                            <rect key="frame" x="62" y="26" width="97" height="16.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-pY-Pm4">
+                                                            <rect key="frame" x="62" y="26" width="225" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="0.078431372550000003" green="0.090196078430000007" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -425,6 +425,7 @@ Select the "+" in the top right to get started</string>
                                                         <constraint firstItem="dpD-yd-tHH" firstAttribute="centerY" secondItem="Rpa-aJ-etE" secondAttribute="centerY" multiplier="1.05" id="84a-BK-p27"/>
                                                         <constraint firstAttribute="trailing" secondItem="dpD-yd-tHH" secondAttribute="trailing" constant="10" id="ZiZ-ni-VBs"/>
                                                         <constraint firstAttribute="height" constant="65" id="cNJ-v7-ePD"/>
+                                                        <constraint firstItem="TBz-pY-Pm4" firstAttribute="width" secondItem="Rpa-aJ-etE" secondAttribute="width" multiplier="0.6" id="rW3-wt-oMq"/>
                                                         <constraint firstItem="cgB-ut-TXa" firstAttribute="leading" secondItem="Rpa-aJ-etE" secondAttribute="leading" constant="15" id="yvK-hW-xM6"/>
                                                         <constraint firstItem="TBz-pY-Pm4" firstAttribute="centerY" secondItem="Rpa-aJ-etE" secondAttribute="centerY" multiplier="1.05" id="zrx-Sz-5qE"/>
                                                     </constraints>
@@ -563,8 +564,8 @@ Select the "+" in the top right to get started</string>
                                                                 <constraint firstAttribute="height" constant="37" id="xJF-SH-0Y3"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5A-E0-fPj">
-                                                            <rect key="frame" x="62" y="26" width="97" height="16.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5A-E0-fPj">
+                                                            <rect key="frame" x="62" y="26" width="225" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="0.078431372550000003" green="0.090196078430000007" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -580,6 +581,7 @@ Select the "+" in the top right to get started</string>
                                                         <constraint firstItem="CYh-3X-SOf" firstAttribute="leading" secondItem="kuZ-Ba-vnI" secondAttribute="leading" constant="15" id="1AS-76-2Nw"/>
                                                         <constraint firstItem="d5A-E0-fPj" firstAttribute="centerY" secondItem="kuZ-Ba-vnI" secondAttribute="centerY" multiplier="1.05" id="3io-Dx-ROe"/>
                                                         <constraint firstItem="d5A-E0-fPj" firstAttribute="leading" secondItem="CYh-3X-SOf" secondAttribute="trailing" constant="10" id="3rI-VN-jxS"/>
+                                                        <constraint firstItem="d5A-E0-fPj" firstAttribute="width" secondItem="kuZ-Ba-vnI" secondAttribute="width" multiplier="0.6" id="JXf-9H-B8L"/>
                                                         <constraint firstAttribute="trailing" secondItem="C1C-RG-iEP" secondAttribute="trailing" constant="10" id="aBg-6Y-2DG"/>
                                                         <constraint firstItem="C1C-RG-iEP" firstAttribute="centerY" secondItem="kuZ-Ba-vnI" secondAttribute="centerY" multiplier="1.05" id="fnS-7P-TQN"/>
                                                         <constraint firstItem="CYh-3X-SOf" firstAttribute="centerY" secondItem="kuZ-Ba-vnI" secondAttribute="centerY" multiplier="1.05" id="hgb-ub-QTK"/>
@@ -753,8 +755,8 @@ Select the "+" in the top right to get started</string>
                                                                 <constraint firstAttribute="height" constant="37" id="L0K-YE-LuC"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JB-Mv-uwU">
-                                                            <rect key="frame" x="62" y="26" width="97" height="16.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JB-Mv-uwU">
+                                                            <rect key="frame" x="62" y="26" width="225" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="0.078431372550000003" green="0.090196078430000007" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -774,6 +776,7 @@ Select the "+" in the top right to get started</string>
                                                         <constraint firstItem="5JB-Mv-uwU" firstAttribute="centerY" secondItem="GS4-XV-Yz0" secondAttribute="centerY" multiplier="1.05" id="JfE-Vo-co0"/>
                                                         <constraint firstItem="tPi-gl-EoY" firstAttribute="centerY" secondItem="GS4-XV-Yz0" secondAttribute="centerY" multiplier="1.05" id="aiA-k5-Qdo"/>
                                                         <constraint firstAttribute="height" constant="65" id="cIb-4G-mEk"/>
+                                                        <constraint firstItem="5JB-Mv-uwU" firstAttribute="width" secondItem="GS4-XV-Yz0" secondAttribute="width" multiplier="0.6" id="mWR-N6-zur"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNj-fN-hdr" userLabel="BottomBar">
@@ -900,8 +903,8 @@ Select the "+" in the top right to get started</string>
                                                                 <constraint firstAttribute="height" constant="37" id="gEq-5U-umF"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImW-Ba-NIL">
-                                                            <rect key="frame" x="62" y="26" width="97" height="16.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImW-Ba-NIL">
+                                                            <rect key="frame" x="62" y="26" width="225" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="0.078431372550000003" green="0.090196078430000007" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -920,6 +923,7 @@ Select the "+" in the top right to get started</string>
                                                         <constraint firstItem="UqE-NT-3dp" firstAttribute="centerY" secondItem="g6u-4a-uXq" secondAttribute="centerY" multiplier="1.05" id="oGz-mP-UV1"/>
                                                         <constraint firstItem="ImW-Ba-NIL" firstAttribute="leading" secondItem="UqE-NT-3dp" secondAttribute="trailing" constant="10" id="oaO-G0-IzD"/>
                                                         <constraint firstAttribute="trailing" secondItem="gdn-3m-sLc" secondAttribute="trailing" constant="10" id="qdK-KJ-fAv"/>
+                                                        <constraint firstItem="ImW-Ba-NIL" firstAttribute="width" secondItem="g6u-4a-uXq" secondAttribute="width" multiplier="0.6" id="rlU-3W-gGS"/>
                                                         <constraint firstItem="ImW-Ba-NIL" firstAttribute="centerY" secondItem="g6u-4a-uXq" secondAttribute="centerY" multiplier="1.05" id="yQQ-0G-dJJ"/>
                                                     </constraints>
                                                 </view>
@@ -1072,8 +1076,8 @@ Select the "+" in the top right to get started</string>
                                                                 <constraint firstAttribute="width" constant="2" id="0kL-Cm-5G5"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXU-fI-3OK">
-                                                            <rect key="frame" x="62" y="26" width="97" height="16.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXU-fI-3OK">
+                                                            <rect key="frame" x="62" y="26" width="217.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="0.078431372550000003" green="0.090196078430000007" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1089,6 +1093,7 @@ Select the "+" in the top right to get started</string>
                                                         <constraint firstItem="Bfs-lW-duN" firstAttribute="top" secondItem="RF1-Nd-nQ0" secondAttribute="bottom" constant="5" id="1KW-mx-OIm"/>
                                                         <constraint firstItem="RF1-Nd-nQ0" firstAttribute="leading" secondItem="9J5-nU-BEU" secondAttribute="leading" constant="33.5" id="7G4-Ds-xbS"/>
                                                         <constraint firstItem="77Z-ed-9b8" firstAttribute="top" secondItem="Bfs-lW-duN" secondAttribute="bottom" constant="5" id="KW6-ZE-Kch"/>
+                                                        <constraint firstItem="aXU-fI-3OK" firstAttribute="width" secondItem="9J5-nU-BEU" secondAttribute="width" multiplier="0.58" id="No7-Ne-yHM"/>
                                                         <constraint firstItem="77Z-ed-9b8" firstAttribute="leading" secondItem="9J5-nU-BEU" secondAttribute="leading" constant="33.5" id="RGb-x2-XrN"/>
                                                         <constraint firstItem="lIU-o1-9E1" firstAttribute="centerY" secondItem="9J5-nU-BEU" secondAttribute="centerY" multiplier="1.05" id="RSH-oL-gtJ"/>
                                                         <constraint firstItem="RF1-Nd-nQ0" firstAttribute="top" secondItem="9J5-nU-BEU" secondAttribute="top" id="Reb-E5-Q4Z"/>
@@ -1263,8 +1268,8 @@ Select the "+" in the top right to get started</string>
                                                                 <constraint firstAttribute="width" constant="2" id="cwe-kT-xX1"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFq-7P-cEW">
-                                                            <rect key="frame" x="62" y="26" width="97" height="16.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@TwitterHandle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFq-7P-cEW">
+                                                            <rect key="frame" x="62" y="26" width="217.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="0.078431372550000003" green="0.090196078430000007" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1285,6 +1290,7 @@ Select the "+" in the top right to get started</string>
                                                         <constraint firstItem="28h-DP-IsA" firstAttribute="centerY" secondItem="Kq0-W9-JB6" secondAttribute="centerY" multiplier="1.05" id="Tw1-91-hxT"/>
                                                         <constraint firstItem="Zbd-at-eNB" firstAttribute="top" secondItem="GEP-Z9-WoM" secondAttribute="bottom" constant="5" id="e8E-jO-tig"/>
                                                         <constraint firstAttribute="bottom" secondItem="4gE-KD-OPJ" secondAttribute="bottom" id="f7x-aN-Qq5"/>
+                                                        <constraint firstItem="RFq-7P-cEW" firstAttribute="width" secondItem="Kq0-W9-JB6" secondAttribute="width" multiplier="0.58" id="jtv-ha-5RJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="28h-DP-IsA" secondAttribute="trailing" constant="10" id="l0A-DT-uFj"/>
                                                         <constraint firstItem="Zbd-at-eNB" firstAttribute="leading" secondItem="Kq0-W9-JB6" secondAttribute="leading" constant="15" id="o08-wh-mAM"/>
                                                         <constraint firstItem="GEP-Z9-WoM" firstAttribute="top" secondItem="Kq0-W9-JB6" secondAttribute="top" id="vaD-9k-T4R"/>
