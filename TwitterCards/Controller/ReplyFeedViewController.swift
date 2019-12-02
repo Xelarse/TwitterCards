@@ -12,6 +12,7 @@ class ReplyFeedViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var noReplyLabel : UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var feedBank : FeedDataBank!
     var feedRootTweet : FeedData!
@@ -31,6 +32,9 @@ class ReplyFeedViewController: UIViewController {
         
         self.tableView.estimatedRowHeight = 100;
         self.tableView.rowHeight = UITableView.automaticDimension;
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
 
     func initialiseRootTweet(rootTweet : FeedData){
@@ -88,12 +92,17 @@ extension ReplyFeedViewController : UITableViewDataSource, UITableViewDelegate{
 //Mark: - Feed bank delegate extensions
 extension ReplyFeedViewController : FeedDataBankDelegate {
     func dataReady() {
-        //TODO Stop loading symbol if it gets added
+        self.activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
         
         if feedBank.usersTweets.count > 1 {
             self.tableView.isHidden = false
             self.noReplyLabel.isHidden = true
             self.tableView.reloadData()
+        }
+        else {
+            self.tableView.isHidden = true
+            self.noReplyLabel.isHidden = false
         }
     }
     

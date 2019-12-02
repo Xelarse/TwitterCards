@@ -13,6 +13,7 @@ class CardFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var noTweetsLabel : UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var feedBank : FeedDataBank!
     var handles : [String] = []
@@ -32,6 +33,9 @@ class CardFeedViewController: UIViewController {
         
         self.tableView.estimatedRowHeight = 100;
         self.tableView.rowHeight = UITableView.automaticDimension;
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     func initHandles(handleArray : [String]){
@@ -90,13 +94,16 @@ extension CardFeedViewController : UITableViewDataSource, UITableViewDelegate{
 //Mark: - Feed bank delegate extensions
 extension CardFeedViewController : FeedDataBankDelegate {
     func dataReady() {
-        //TODO Stop loading symbol if it gets added
+        self.activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
         
         if feedBank.usersTweets.count == 0 {
             self.noTweetsLabel.isHidden = false
             self.tableView.isHidden = true
         }
         else{
+            self.noTweetsLabel.isHidden = true
+            self.tableView.isHidden = false
             self.tableView.reloadData()
         }
     }

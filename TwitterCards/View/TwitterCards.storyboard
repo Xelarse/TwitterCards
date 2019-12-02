@@ -384,7 +384,12 @@ Select the "+" in the top right to get started</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IpK-r6-0t5" userLabel="TweetTableView">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="axE-rB-ZGd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="tintColor" red="0.1140504405" green="0.63152408599999998" blue="0.95026165250000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.1140504405" green="0.63152408599999998" blue="0.95026165250000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IpK-r6-0t5" userLabel="TweetTableView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -708,15 +713,20 @@ Select the "+" in the top right to get started</string>
                             <constraint firstItem="7bm-er-o7x" firstAttribute="top" secondItem="2aY-rD-npE" secondAttribute="top" constant="20" id="3zw-Os-VpN"/>
                             <constraint firstItem="2aY-rD-npE" firstAttribute="bottom" secondItem="7bm-er-o7x" secondAttribute="bottom" constant="20" id="7RQ-OW-cZ7"/>
                             <constraint firstItem="IpK-r6-0t5" firstAttribute="top" secondItem="2aY-rD-npE" secondAttribute="top" id="C0p-zm-w9d"/>
+                            <constraint firstItem="2aY-rD-npE" firstAttribute="bottom" secondItem="axE-rB-ZGd" secondAttribute="bottom" id="IBd-he-Sku"/>
                             <constraint firstItem="7bm-er-o7x" firstAttribute="leading" secondItem="2aY-rD-npE" secondAttribute="leading" constant="20" id="ZD8-EW-sQw"/>
                             <constraint firstItem="2aY-rD-npE" firstAttribute="trailing" secondItem="7bm-er-o7x" secondAttribute="trailing" constant="20" id="d1o-b1-iJR"/>
+                            <constraint firstItem="2aY-rD-npE" firstAttribute="trailing" secondItem="axE-rB-ZGd" secondAttribute="trailing" id="ny6-1t-GAx"/>
                             <constraint firstItem="2aY-rD-npE" firstAttribute="bottom" secondItem="IpK-r6-0t5" secondAttribute="bottom" id="pdf-3Y-hqO"/>
                             <constraint firstItem="2aY-rD-npE" firstAttribute="trailing" secondItem="IpK-r6-0t5" secondAttribute="trailing" id="u4y-wC-Q8g"/>
+                            <constraint firstItem="axE-rB-ZGd" firstAttribute="leading" secondItem="2aY-rD-npE" secondAttribute="leading" id="ubJ-cV-yWP"/>
                             <constraint firstItem="IpK-r6-0t5" firstAttribute="leading" secondItem="2aY-rD-npE" secondAttribute="leading" id="wnr-lH-UxC"/>
+                            <constraint firstItem="axE-rB-ZGd" firstAttribute="top" secondItem="2aY-rD-npE" secondAttribute="top" id="zXV-VM-uey"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2aY-rD-npE"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="axE-rB-ZGd" id="UkW-y6-0oU"/>
                         <outlet property="noTweetsLabel" destination="7bm-er-o7x" id="W2D-pE-wmo"/>
                         <outlet property="tableView" destination="IpK-r6-0t5" id="ag9-2O-MFV"/>
                     </connections>
@@ -733,6 +743,11 @@ Select the "+" in the top right to get started</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KIJ-vP-rWG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="tintColor" red="0.1140504405" green="0.63152408599999998" blue="0.95026165250000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.1140504405" green="0.63152408599999998" blue="0.95026165250000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Emd-wf-tTx" userLabel="ReplyTweetView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1441,7 +1456,7 @@ Select the "+" in the top right to get started</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No replies for this tweet are currently available" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z67-ev-chy">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No replies for this tweet are currently available" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z67-ev-chy">
                                 <rect key="frame" x="20" y="40" width="335" height="607"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1454,14 +1469,19 @@ Select the "+" in the top right to get started</string>
                             <constraint firstItem="z67-ev-chy" firstAttribute="top" secondItem="UQr-WM-akx" secondAttribute="top" constant="20" id="4Nd-zs-WsZ"/>
                             <constraint firstItem="z67-ev-chy" firstAttribute="leading" secondItem="UQr-WM-akx" secondAttribute="leading" constant="20" id="G0w-mk-tg5"/>
                             <constraint firstItem="Emd-wf-tTx" firstAttribute="top" secondItem="UQr-WM-akx" secondAttribute="top" id="Oor-WT-o3y"/>
+                            <constraint firstItem="KIJ-vP-rWG" firstAttribute="leading" secondItem="UQr-WM-akx" secondAttribute="leading" id="QXU-JB-cUc"/>
+                            <constraint firstItem="KIJ-vP-rWG" firstAttribute="top" secondItem="KtS-D1-DsU" secondAttribute="top" id="UGn-Pp-4oY"/>
+                            <constraint firstItem="UQr-WM-akx" firstAttribute="bottom" secondItem="KIJ-vP-rWG" secondAttribute="bottom" id="UrX-YP-sSo"/>
                             <constraint firstItem="UQr-WM-akx" firstAttribute="trailing" secondItem="z67-ev-chy" secondAttribute="trailing" constant="20" id="bQe-Jm-jro"/>
                             <constraint firstItem="UQr-WM-akx" firstAttribute="trailing" secondItem="Emd-wf-tTx" secondAttribute="trailing" id="ctZ-0f-v8Z"/>
+                            <constraint firstItem="KIJ-vP-rWG" firstAttribute="trailing" secondItem="UQr-WM-akx" secondAttribute="trailing" id="e6l-KS-IeY"/>
                             <constraint firstItem="UQr-WM-akx" firstAttribute="bottom" secondItem="z67-ev-chy" secondAttribute="bottom" constant="20" id="gq1-VM-SDI"/>
                             <constraint firstItem="UQr-WM-akx" firstAttribute="bottom" secondItem="Emd-wf-tTx" secondAttribute="bottom" id="io5-mx-2h7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UQr-WM-akx"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="KIJ-vP-rWG" id="jV0-SR-ILs"/>
                         <outlet property="noReplyLabel" destination="z67-ev-chy" id="Cgh-ph-kio"/>
                         <outlet property="tableView" destination="Emd-wf-tTx" id="vS9-ky-fp7"/>
                     </connections>

@@ -16,7 +16,7 @@ class CardSelectionViewController: UIViewController {
     @IBOutlet weak var noCardsLabel: UILabel!
     
     let colCelScaleX : CGFloat = 0.8
-    let colCelScaleY : CGFloat = 0.8
+    let colCelScaleY : CGFloat = 0.75
     
     var selectionBank = SelectionCarouselBank(initType: SelectionCarouselBank.InitialisationType.Real)
     
@@ -117,7 +117,7 @@ extension CardSelectionViewController : UICollectionViewDelegate, UIScrollViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //After selecting a collection cell get the handles from that cell, instantiate a new cardfeedview and set it as the delegate and send it the handles
         
-        if !editingMode{
+        if !editingMode {
             let handlesToSend = selectionBank.carouselCells[indexPath.item].handleArray
             
             let cardFeedVC = storyboard?.instantiateViewController(withIdentifier: "CardFeedViewController") as! CardFeedViewController
