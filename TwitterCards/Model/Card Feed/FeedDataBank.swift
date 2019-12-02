@@ -78,6 +78,7 @@ class FeedDataBank {
         }
         
         pendingFetches = fixedHandles.count
+        let fetchedAmount = floor(Double(200) / Double(pendingFetches))
         
         for handle in fixedHandles {
             TwitterApi.shared.getUserTweets(callback: { (tweetArray) in
@@ -90,7 +91,7 @@ class FeedDataBank {
                     self.delegate.dataReady()
                 }
                 
-            }, screenName: handle, tweetCount: 150, includeRts: true)
+            }, screenName: handle, tweetCount: Int(fetchedAmount), includeRts: true)
         }
         
     }
