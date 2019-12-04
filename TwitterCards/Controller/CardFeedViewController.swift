@@ -44,6 +44,9 @@ class CardFeedViewController: UIViewController {
     
     @objc func swipeRightGesture(_ sender:UISwipeGestureRecognizer){
         if sender.state == .ended{
+            handles.removeAll()
+            feedBank.usersTweets.removeAll()
+            feedBank = nil
             let _ = navigationController?.popViewController(animated: true)
         }
     }

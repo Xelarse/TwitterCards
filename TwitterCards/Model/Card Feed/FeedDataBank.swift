@@ -126,15 +126,19 @@ class FeedDataBank {
             DispatchQueue.global().async {
                 if let data = try? Data( contentsOf:url)
                 {
-                    DispatchQueue.main.async {
-                        newFeedData.userIcon = UIImage( data:data)!
-                        self.pushRequestToUpdateItem(data: newFeedData)
+                    if self.checkIfCellStillExists(cell: newFeedData) {
+                        DispatchQueue.main.async {
+                            newFeedData.userIcon = UIImage( data:data)!
+                            self.pushRequestToUpdateItem(data: newFeedData)
+                        }
                     }
                 }
                 else {
-                    DispatchQueue.main.async {
-                        newFeedData.userIcon = UIImage(named: "blank")!
-                        self.pushRequestToUpdateItem(data: newFeedData)
+                    if self.checkIfCellStillExists(cell: newFeedData) {
+                        DispatchQueue.main.async {
+                            newFeedData.userIcon = UIImage(named: "blank")!
+                            self.pushRequestToUpdateItem(data: newFeedData)
+                        }
                     }
                 }
             }
@@ -145,15 +149,19 @@ class FeedDataBank {
                 DispatchQueue.global().async {
                     if let data = try? Data( contentsOf:url)
                     {
-                        DispatchQueue.main.async {
-                            newFeedData.tweetImage = UIImage( data:data)!
-                            self.pushRequestToUpdateItem(data: newFeedData)
+                        if self.checkIfCellStillExists(cell: newFeedData){
+                            DispatchQueue.main.async {
+                                newFeedData.tweetImage = UIImage( data:data)!
+                                self.pushRequestToUpdateItem(data: newFeedData)
+                            }
                         }
                     }
                     else {
-                        DispatchQueue.main.async {
-                            newFeedData.tweetImage = UIImage(named: "blank")!
-                            self.pushRequestToUpdateItem(data: newFeedData)
+                        if self.checkIfCellStillExists(cell: newFeedData){
+                            DispatchQueue.main.async {
+                                newFeedData.tweetImage = UIImage(named: "blank")!
+                                self.pushRequestToUpdateItem(data: newFeedData)
+                            }
                         }
                     }
                 }
@@ -172,7 +180,18 @@ class FeedDataBank {
                 break
             }
         }
-        delegate.updateCellAtIndex(index: cellIndex)
+        if usersTweets.count > 0 && cellIndex < usersTweets.count - 1 {
+            delegate.updateCellAtIndex(index: cellIndex)
+        }
+    }
+    
+    func checkIfCellStillExists(cell : FeedData) -> Bool {
+        for existingCell in usersTweets {
+            if existingCell.tweetId == cell.tweetId{
+                return true
+            }
+        }
+        return false
     }
     
     func dateFromCreatedString(dateString : String) -> Date {
