@@ -271,4 +271,9 @@ class FeedDataBank {
     func sortFeedByDataAcending() {
         usersTweets = usersTweets.sorted(by: {$0.tweetDate.compare($1.tweetDate) == .orderedAscending})
     }
+    
+    func cleanBank(){
+        DispatchQueue.global().suspend()
+        usersTweets.removeAll()
+    }
 }

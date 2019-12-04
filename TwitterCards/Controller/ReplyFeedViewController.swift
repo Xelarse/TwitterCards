@@ -43,7 +43,7 @@ class ReplyFeedViewController: UIViewController {
     
     @objc func swipeRightGesture(_ sender:UISwipeGestureRecognizer){
         if sender.state == .ended{
-            feedBank.usersTweets.removeAll()
+            feedBank.cleanBank()
             feedBank = nil
             feedRootTweet = nil
             let _ = navigationController?.popViewController(animated: true)
