@@ -22,6 +22,8 @@ class CardSelectionViewController: UIViewController {
     
     var editingMode : Bool = false
     
+    var cachedColour : UIColor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +57,7 @@ class CardSelectionViewController: UIViewController {
     @IBAction func addButtonPressed(_ sender: Any) {
         let cardAddVC = storyboard?.instantiateViewController(withIdentifier: "CardCreationViewController") as! CardCreationViewController
         cardAddVC.newCardDelegate = self
+        cachedColour = nil
         navigationController?.pushViewController(cardAddVC, animated: true)
     }
     
@@ -133,7 +136,7 @@ extension CardSelectionViewController : NewCardDelegate {
     func passNewCardDetails(title : String, handles : [String]){
         //Generates the properties to add to the array of SelectionCarouselBank
         
-        let cardColor = UIColor(red: CGFloat.random(in: 0..<1), green: CGFloat.random(in: 0..<1), blue: CGFloat.random(in: 0..<1), alpha: 0.6)
+        let cardColor = cachedColour ?? UIColor(red: CGFloat.random(in: 0..<1), green: CGFloat.random(in: 0..<1), blue: CGFloat.random(in: 0..<1), alpha: 0.6)
         
         selectionBank.addNewCardToBank(title: title, handles: handles, color: cardColor, backgroundImgName: "blank")
         
@@ -164,6 +167,7 @@ extension CardSelectionViewController : CardSelectCollectionCellDelegate {
         if let index = selectionBank.carouselCells.firstIndex(where: {$0.title == cellInfo.title}){
             let existingHandles = selectionBank.carouselCells[index].handleArray
             toggleEditing()
+            cachedColour = selectionBank.carouselCells[index].backgroundColour
             selectionBank.carouselCells.remove(at: index)
             
             let cardAddVC = storyboard?.instantiateViewController(withIdentifier: "CardCreationViewController") as! CardCreationViewController

@@ -54,7 +54,7 @@ class CardCreationViewController: UIViewController {
     
     func checkAndAddHandleToArray(){
         if let fieldText : String = textField.text{
-            if fieldText.first == "@" || fieldText.first == "#" {
+            if fieldText.first == "@" {
                 handles.append(fieldText)
                 
                 let indexPath = IndexPath(row: handles.count - 1, section: 0)
@@ -76,7 +76,7 @@ class CardCreationViewController: UIViewController {
     }
     
     func invalidTwitterEntryAlert(){
-        let alert = UIAlertController(title: "Error", message: "Must enter a valid Twitter handle or Hashtag", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "Must enter a valid Twitter handle", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (UIAlertAction) in
             self.dismiss(animated: true, completion: nil)
