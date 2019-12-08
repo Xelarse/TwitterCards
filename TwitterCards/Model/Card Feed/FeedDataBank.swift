@@ -128,7 +128,7 @@ class FeedDataBank {
                 {
                     if self.checkIfCellStillExists(cell: newFeedData) {
                         DispatchQueue.main.async {
-                            newFeedData.userIcon = UIImage( data:data)!
+                            newFeedData.userIcon = UIImage( data:data) ?? UIImage(named: "blank")!
                             self.pushRequestToUpdateItem(data: newFeedData)
                         }
                     }
@@ -151,7 +151,7 @@ class FeedDataBank {
                     {
                         if self.checkIfCellStillExists(cell: newFeedData){
                             DispatchQueue.main.async {
-                                newFeedData.tweetImage = UIImage( data:data)!
+                                newFeedData.tweetImage = UIImage( data:data) ?? UIImage(named: "blank")!
                                 self.pushRequestToUpdateItem(data: newFeedData)
                             }
                         }

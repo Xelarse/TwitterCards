@@ -119,7 +119,7 @@ class TwitterApi {
     func jsonResponseToTweetArray(tweetJson : JSON) -> [Tweet] {
         var tweets = [Tweet]()
         
-        for (index,subJson):(String, JSON) in tweetJson {
+        for (_,subJson):(String, JSON) in tweetJson {
             let tweet = Tweet()
             tweet.createdAt = subJson["created_at"].string ?? tweet.createdAt
             tweet.tweetId = subJson["id_str"].string ?? tweet.tweetId
@@ -141,7 +141,7 @@ class TwitterApi {
         var replyJsons = [JSON]()
         
         if let searchResults = tweetJson.dictionary?["statuses"] {
-            for(index, subJson):(String, JSON) in searchResults{
+            for(_, subJson):(String, JSON) in searchResults{
                 if let id = subJson["in_reply_to_status_id_str"].string {
                     if id == idString {
                         replyJsons.append(subJson)
