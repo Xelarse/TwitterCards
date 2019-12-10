@@ -50,6 +50,7 @@ class CardCreationViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: Any) {
         checkAndAddHandleToArray()
+        textField.resignFirstResponder()
     }
     
     func checkAndAddHandleToArray(){

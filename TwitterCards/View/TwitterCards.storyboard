@@ -254,7 +254,7 @@ Select the "+" in the top right to get started</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Noy-uW-29k" userLabel="Upper">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter @'s and #'s here!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jM-8T-noT">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter @'s here!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jM-8T-noT">
                                                 <rect key="frame" x="20" y="22.5" width="281.5" height="45.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>

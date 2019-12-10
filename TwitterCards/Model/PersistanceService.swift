@@ -34,7 +34,7 @@ final class PersistanceService {
         if PersistanceService.context.hasChanges {
             do {
                 try PersistanceService.context.save()
-                print("SAVED BOI")
+                print("Data Saved in CoreData")
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
